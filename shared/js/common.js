@@ -904,3 +904,225 @@ function isInViewport(element) {
   }
   
 })();
+
+// ============================================
+// SERVICES SHOWCASE - Enhanced Hover Effects
+// ============================================
+
+(function() {
+  'use strict';
+  
+  // Wait for DOM to be fully loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServicesShowcase);
+  } else {
+    initServicesShowcase();
+  }
+  
+  function initServicesShowcase() {
+    const serviceBlocks = document.querySelectorAll('.service-block');
+    
+    if (serviceBlocks.length === 0) return;
+    
+    serviceBlocks.forEach(block => {
+      const imageContainer = block.querySelector('.service-image-container');
+      const serviceNumber = block.querySelector('.service-number');
+      const serviceInfo = block.querySelector('.service-info');
+      
+      if (!imageContainer || !serviceNumber || !serviceInfo) return;
+      
+      // Hover enter
+      block.addEventListener('mouseenter', function() {
+        // Add active class
+        this.classList.add('service-active');
+        
+        // Smooth zoom animation
+        gsap.to(imageContainer, {
+          duration: 0.6,
+          scale: 1.08,
+          ease: 'power2.out'
+        });
+        
+        // Number animation
+        gsap.to(serviceNumber, {
+          duration: 0.5,
+          scale: 1,
+          ease: 'back.out(1.7)',
+          delay: 0.1
+        });
+        
+        // Info animation
+        gsap.to(serviceInfo, {
+          duration: 0.5,
+          y: 0,
+          opacity: 1,
+          ease: 'power2.out',
+          delay: 0.2
+        });
+      });
+      
+      // Hover leave
+      block.addEventListener('mouseleave', function() {
+        // Remove active class
+        this.classList.remove('service-active');
+        
+        // Reset zoom
+        gsap.to(imageContainer, {
+          duration: 0.4,
+          scale: 1,
+          ease: 'power2.inOut'
+        });
+        
+        // Reset number
+        gsap.to(serviceNumber, {
+          duration: 0.4,
+          scale: 0.7,
+          ease: 'power2.inOut'
+        });
+        
+        // Reset info
+        gsap.to(serviceInfo, {
+          duration: 0.3,
+          y: 15,
+          opacity: 0,
+          ease: 'power2.in'
+        });
+      });
+      
+      // Click to navigate
+      block.addEventListener('click', function() {
+        const serviceNum = this.getAttribute('data-service');
+        const serviceLinks = {
+          '1': 'service.html#cnc',
+          '2': 'service.html#turning',
+          '3': 'service.html#grinding',
+          '4': 'service.html#custom'
+        };
+        
+        if (serviceLinks[serviceNum]) {
+          window.location.href = serviceLinks[serviceNum];
+        }
+      });
+      
+      // Add keyboard accessibility
+      block.setAttribute('tabindex', '0');
+      block.setAttribute('role', 'button');
+      
+      block.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+    
+    // Parallax effect on mouse move
+    const servicesSection = document.querySelector('.services-showcase-section');
+    
+    if (servicesSection) {
+      servicesSection.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        const bgGradient1 = this.querySelector('.bg-gradient-1');
+        const bgGradient2 = this.querySelector('.bg-gradient-2');
+        
+        if (bgGradient1) {
+          gsap.to(bgGradient1, {
+            duration: 1,
+            x: mouseX * 30,
+            y: mouseY * 30,
+            ease: 'power1.out'
+          });
+        }
+        
+        if (bgGradient2) {
+          gsap.to(bgGradient2, {
+            duration: 1.2,
+            x: mouseX * -20,
+            y: mouseY * -20,
+            ease: 'power1.out'
+          });
+        }
+      });
+    }
+  }
+  
+})();
+
+/* ============================================
+   ENHANCED SERVICES SHOWCASE - Interactive Features
+   ============================================ */
+
+(function() {
+  'use strict';
+  
+  function initServicesShowcase() {
+    const serviceCards = document.querySelectorAll('.service-showcase-card');
+    
+    if (serviceCards.length === 0) return;
+    
+    // Service navigation mapping
+    const serviceLinks = {
+      '1': 'service.html#cnc',
+      '2': 'service.html#turning',
+      '3': 'service.html#grinding',
+      '4': 'service.html#custom'
+    };
+    
+    serviceCards.forEach(card => {
+      // Click navigation
+      card.addEventListener('click', function() {
+        const serviceNum = this.getAttribute('data-service');
+        if (serviceLinks[serviceNum]) {
+          window.location.href = serviceLinks[serviceNum];
+        }
+      });
+      
+      // Keyboard navigation
+      card.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+      
+      // Add hover sound effect (optional)
+      card.addEventListener('mouseenter', function() {
+        // Optional: Add subtle audio feedback
+        // playHoverSound();
+      });
+    });
+    
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '-50px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    serviceCards.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(40px)';
+      card.style.transition = `all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.1}s`;
+      observer.observe(card);
+    });
+  }
+  
+  // Initialize
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initServicesShowcase);
+  } else {
+    initServicesShowcase();
+  }
+  
+})();
