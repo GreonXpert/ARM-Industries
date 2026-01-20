@@ -1,5 +1,6 @@
 // ============================================
-// AMR Industrials - Common JavaScript
+// AMR Industrials - Universal Common JavaScript
+// Combines all page-specific functionality
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -61,6 +62,27 @@ document.addEventListener('DOMContentLoaded', function() {
   setActiveNav();
   
   // ============================================
+  // Header Scroll Effect
+  // ============================================
+  
+  const header = document.querySelector('.header');
+  let lastScroll = 0;
+  
+  if (header) {
+    window.addEventListener('scroll', function() {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    });
+  }
+  
+  // ============================================
   // Smooth Scroll for Anchor Links
   // ============================================
   
@@ -107,33 +129,336 @@ document.addEventListener('DOMContentLoaded', function() {
   animatedElements.forEach(el => observer.observe(el));
   
   // ============================================
-  // Header Scroll Effect
-  // ============================================
-  
-  const header = document.querySelector('.header');
-  let lastScroll = 0;
-  
-  if (header) {
-    window.addEventListener('scroll', function() {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      
-      lastScroll = currentScroll;
-    });
-  }
-  
-  // ============================================
   // Current Year in Footer
   // ============================================
   
   const yearElement = document.querySelector('.current-year');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
+  }
+  
+  // ============================================
+  // HOME PAGE: Hero Swiper with Fade Effect
+  // ============================================
+  
+  const heroSwiper = document.querySelector('.hero-swiper');
+  if (heroSwiper && typeof Swiper !== 'undefined') {
+    new Swiper('.hero-swiper', {
+      loop: true,
+      speed: 1200,
+      grabCursor: true,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.hero-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '"></span>';
+        },
+      },
+      navigation: {
+        nextEl: '.hero-next',
+        prevEl: '.hero-prev',
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      on: {
+        slideChangeTransitionStart: function () {
+          const activeSlide = this.slides[this.activeIndex];
+          const content = activeSlide.querySelector('.hero-left');
+          if (content) {
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(20px)';
+          }
+        },
+        slideChangeTransitionEnd: function () {
+          const activeSlide = this.slides[this.activeIndex];
+          const content = activeSlide.querySelector('.hero-left');
+          if (content) {
+            setTimeout(() => {
+              content.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+              content.style.opacity = '1';
+              content.style.transform = 'translateY(0)';
+            }, 300);
+          }
+        }
+      }
+    });
+  }
+  
+  // ============================================
+  // HOME PAGE: Counter Animation for Metrics
+  // ============================================
+  
+  function animateCounter(element, target, suffix = '') {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target + suffix;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.ceil(current) + suffix;
+      }
+    }, 30);
+  }
+  
+  const metricItems = document.querySelectorAll('.metric-item');
+  if (metricItems.length > 0) {
+    const metricObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const number = entry.target.querySelector('.metric-number');
+          if (!number) return;
+          
+          const text = number.textContent;
+          const value = parseInt(text.replace(/\D/g, ''));
+          const suffix = text.includes('+') ? '+' : '';
+          
+          animateCounter(number, value, suffix);
+          metricObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    metricItems.forEach(item => {
+      metricObserver.observe(item);
+    });
+  }
+  
+  // ============================================
+  // HOME PAGE: Fade-in Animations for Elements
+  // ============================================
+  
+  const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+  
+  if (fadeElements.length > 0) {
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) translateX(0)';
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    fadeElements.forEach(element => {
+      element.style.opacity = '0';
+      if (element.classList.contains('slide-in-left')) {
+        element.style.transform = 'translateX(-30px)';
+      } else if (element.classList.contains('slide-in-right')) {
+        element.style.transform = 'translateX(30px)';
+      } else {
+        element.style.transform = 'translateY(30px)';
+      }
+      element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      fadeObserver.observe(element);
+    });
+  }
+  
+  // ============================================
+  // CONTACT PAGE: Form Validation and Submission
+  // ============================================
+  
+  const contactForm = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+  
+  if (contactForm) {
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // Phone validation regex (basic)
+    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+    
+    function showError(input, message) {
+      const formGroup = input.closest('.form-group');
+      const errorMessage = formGroup.querySelector('.error-message');
+      
+      input.classList.add('error');
+      errorMessage.textContent = message;
+      errorMessage.classList.add('visible');
+    }
+    
+    function clearError(input) {
+      const formGroup = input.closest('.form-group');
+      const errorMessage = formGroup.querySelector('.error-message');
+      
+      input.classList.remove('error');
+      errorMessage.textContent = '';
+      errorMessage.classList.remove('visible');
+    }
+    
+    function validateField(input) {
+      const value = input.value.trim();
+      const fieldName = input.name;
+      
+      // Clear previous error
+      clearError(input);
+      
+      // Check required fields
+      if (input.hasAttribute('required') && value === '') {
+        showError(input, 'This field is required');
+        return false;
+      }
+      
+      // Validate email
+      if (fieldName === 'email' && value !== '') {
+        if (!emailRegex.test(value)) {
+          showError(input, 'Please enter a valid email address');
+          return false;
+        }
+      }
+      
+      // Validate phone (if provided)
+      if (fieldName === 'phone' && value !== '') {
+        if (!phoneRegex.test(value)) {
+          showError(input, 'Please enter a valid phone number');
+          return false;
+        }
+      }
+      
+      // Validate subject
+      if (fieldName === 'subject' && value === '') {
+        showError(input, 'Please select a subject');
+        return false;
+      }
+      
+      return true;
+    }
+    
+    // Real-time validation
+    const formInputs = contactForm.querySelectorAll('input, select, textarea');
+    formInputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        validateField(this);
+      });
+      
+      input.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+          validateField(this);
+        }
+      });
+    });
+    
+    // Form submission
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validate all fields
+      let isValid = true;
+      formInputs.forEach(input => {
+        if (!validateField(input)) {
+          isValid = false;
+        }
+      });
+      
+      if (!isValid) {
+        // Scroll to first error
+        const firstError = contactForm.querySelector('.error');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstError.focus();
+        }
+        return;
+      }
+      
+      // If validation passes, show success message
+      contactForm.style.display = 'none';
+      if (successMessage) {
+        successMessage.style.display = 'block';
+        
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          contactForm.reset();
+          contactForm.style.display = 'flex';
+          successMessage.style.display = 'none';
+        }, 5000);
+      }
+    });
+  }
+  
+  // ============================================
+  // SERVICE PAGE: FAQ Accordion
+  // ============================================
+  
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        const answer = this.nextElementSibling;
+        
+        // Close all other FAQs
+        faqQuestions.forEach(q => {
+          if (q !== this) {
+            q.setAttribute('aria-expanded', 'false');
+            q.nextElementSibling.style.maxHeight = null;
+          }
+        });
+        
+        // Toggle current FAQ
+        this.setAttribute('aria-expanded', !isExpanded);
+        
+        if (!isExpanded) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+          answer.style.maxHeight = null;
+        }
+      });
+    });
+  }
+  
+  // ============================================
+  // TEAM PAGE: Highlights Swiper
+  // ============================================
+  
+  const highlightsSwiper = document.querySelector('.highlights-swiper');
+  if (highlightsSwiper && typeof Swiper !== 'undefined') {
+    new Swiper('.highlights-swiper', {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        }
+      }
+    });
   }
   
 });
