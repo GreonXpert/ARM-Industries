@@ -2295,3 +2295,357 @@ a:hover {
     padding: var(--space-lg);
   }
 }
+
+/* ============================================
+   HOME PAGE - About Section
+   ============================================ */
+
+.about-home-section {
+  background: var(--color-white);
+}
+
+.about-home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.about-home-content h2 {
+  font-size: var(--text-4xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.highlight-item {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.highlight-icon {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.highlight-item h3 {
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.highlight-item p {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.visual-card {
+  position: relative;
+  background: var(--gradient-card);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-secondary);
+}
+
+.about-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.stats-overlay {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: space-between;
+}
+
+.stat-badge {
+  background: var(--color-white);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  flex: 1;
+}
+
+.badge-number {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+}
+
+.badge-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-top: var(--space-xs);
+}
+
+/* ============================================
+   HOME PAGE - Services Section
+   ============================================ */
+
+.services-home-section {
+  background: var(--gradient-hero);
+}
+
+.services-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+.service-home-card {
+  background: var(--color-white);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-home-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-accent);
+}
+
+.service-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-card);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.service-home-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.service-home-card h3 {
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.service-home-card p {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  margin-top: auto;
+}
+
+.service-link:hover {
+  color: var(--color-tertiary);
+  gap: var(--space-sm);
+}
+
+.service-link svg {
+  transition: transform var(--transition-base);
+}
+
+.service-link:hover svg {
+  transform: translateX(4px);
+}
+
+.services-cta {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+/* ============================================
+   HOME PAGE - Team Section
+   ============================================ */
+
+.team-home-section {
+  background: var(--color-white);
+}
+
+.team-home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.team-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.team-home-content h2 {
+  font-size: var(--text-4xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.team-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin: var(--space-2xl) 0;
+}
+
+.team-feature-item {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.feature-number {
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-accent);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+
+.feature-content h4 {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.feature-content p {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================
+   HOME PAGE - CTA Enhancements
+   ============================================ */
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Responsive Design for Home Page Sections
+   ============================================ */
+
+@media (max-width: 968px) {
+  .about-home-grid,
+  .team-home-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-home-visual,
+  .team-home-visual {
+    order: -1;
+  }
+  
+  .services-home-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .stats-overlay {
+    position: static;
+    margin-top: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-home-content h2,
+  .team-home-content h2 {
+    font-size: var(--text-3xl);
+  }
+  
+  .services-home-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .highlight-item,
+  .team-feature-item {
+    gap: var(--space-md);
+  }
+  
+  .highlight-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .feature-number {
+    width: 40px;
+    height: 40px;
+    font-size: var(--text-lg);
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-badge {
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .badge-number {
+    font-size: var(--text-xl);
+  }
+  
+  .service-home-card {
+    padding: var(--space-lg);
+  }
+  
+  .service-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .service-home-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
