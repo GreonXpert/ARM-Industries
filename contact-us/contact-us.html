@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact AMR Industrials - Get in touch for precision engineering solutions. Phone: +91 9442157165, Email: amrindustrials2003@gmail.com">
+  <title>Contact Us - AMR Industrials</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../shared/css/theme.css">
+  <link rel="stylesheet" href="css/contact-us.css">
+</head>
+<body>
+  
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+  
+  <!-- Header/Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-brand">
+          <a href="../navbar/navbar.html" class="brand-link">
+            <span class="brand-name">AMR Industrials</span>
+          </a>
+        </div>
+        
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+        
+        <ul class="nav-menu">
+          <li><a href="../navbar/navbar.html" class="nav-link">Home</a></li>
+          <li><a href="../about/about.html" class="nav-link">About</a></li>
+          <li><a href="../service/service.html" class="nav-link">Services</a></li>
+          <li><a href="../team/team.html" class="nav-link">Team</a></li>
+          <li><a href="contact-us.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title fade-in">Get in Touch</h1>
+        <p class="page-subtitle fade-in">Let's discuss how we can add value to your manufacturing operations</p>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper slide-in-left">
+            <h2>Send Us a Message</h2>
+            <p class="form-intro">Fill out the form below and we'll get back to you as soon as possible.</p>
+            
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  aria-required="true"
+                  placeholder="John Doe"
+                >
+                <span class="error-message" role="alert"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  aria-required="true"
+                  placeholder="john.doe@company.com"
+                >
+                <span class="error-message" role="alert"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  placeholder="+91 1234567890"
+                >
+                <span class="error-message" role="alert"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject <span class="required">*</span></label>
+                <select 
+                  id="subject" 
+                  name="subject" 
+                  required 
+                  aria-required="true"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="quote">Request a Quote</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="technical">Technical Question</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-message" role="alert"></span>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="6" 
+                  required 
+                  aria-required="true"
+                  placeholder="Tell us about your project or inquiry..."
+                ></textarea>
+                <span class="error-message" role="alert"></span>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </form>
+            
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+              <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <h3>Thank You!</h3>
+              <p>Your message has been received. We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="contact-info-wrapper slide-in-right">
+            <div class="contact-info-card">
+              <h3>Contact Information</h3>
+              
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <div>
+                  <h4>Phone</h4>
+                  <a href="tel:+919442157165">+91 9442157165</a>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:amrindustrials2003@gmail.com">amrindustrials2003@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <h4>Location</h4>
+                  <p>Coimbatore, Tamil Nadu, India</p>
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <div>
+                  <h4>GST Registration</h4>
+                  <p>33AIIPM7484J1ZS</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Additional Info -->
+            <div class="additional-info">
+              <h4>Business Hours</h4>
+              <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- Map Placeholder (No address provided, so using placeholder) -->
+    <section class="map-section">
+      <div class="container">
+        <div class="map-placeholder fade-in">
+          <svg viewBox="0 0 400 300" class="map-icon">
+            <rect x="0" y="0" width="400" height="300" fill="var(--color-tertiary)" opacity="0.2"/>
+            <path d="M200 120 L220 160 L260 165 L230 190 L240 230 L200 205 L160 230 L170 190 L140 165 L180 160 Z" fill="var(--color-accent)"/>
+            <circle cx="200" cy="150" r="60" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
+            <text x="200" y="250" text-anchor="middle" fill="var(--color-text)" font-size="18" font-weight="600">Coimbatore, Tamil Nadu</text>
+          </svg>
+          <p class="map-note">For specific location details, please contact us directly.</p>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="footer-title">AMR Industrials</h3>
+          <p class="footer-text">40+ years of precision engineering excellence. Your trusted manufacturing partner for critical industrial components.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../navbar/navbar.html">Home</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../service/service.html">Services</a></li>
+            <li><a href="../team/team.html">Our Team</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="../service/service.html#cnc">CNC Machining</a></li>
+            <li><a href="../service/service.html#turning">Conventional Turning</a></li>
+            <li><a href="../service/service.html#grinding">Precision Grinding</a></li>
+            <li><a href="../service/service.html#custom">Custom Engineering</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact Info</h4>
+          <ul class="footer-contact">
+            <li>
+              <strong>Phone:</strong><br>
+              <a href="tel:+919442157165">+91 9442157165</a>
+            </li>
+            <li>
+              <strong>Email:</strong><br>
+              <a href="mailto:amrindustrials2003@gmail.com">amrindustrials2003@gmail.com</a>
+            </li>
+            <li>
+              <strong>GST:</strong><br>
+              33AIIPM7484J1ZS
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span class="current-year">2025</span> AMR Industrials. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="../shared/js/common.js"></script>
+  <script src="js/contact-us.js"></script>
+  
+</body>
+</html>
