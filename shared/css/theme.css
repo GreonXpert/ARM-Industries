@@ -1601,36 +1601,244 @@ body.nav-open {
    CTA Section (Universal)
    ============================================ */
 
-.cta-section {
-  background: var(--gradient-accent);
-  text-align: center;
+/* ============================================
+   ENHANCED CTA SECTION (Drop-in)
+   ============================================ */
+
+.cta-enhanced-section {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--space-3xl) + 10px) 0;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(201, 181, 156, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(217, 207, 199, 0.30) 0%, transparent 60%),
+    linear-gradient(135deg, var(--palette-1), var(--palette-2));
 }
 
-.cta-content h2 {
-  font-size: var(--text-4xl);
-  color: var(--color-white);
-  margin-bottom: var(--space-md);
+.cta-parallax-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.cta-content p {
-  font-size: var(--text-xl);
-  color: var(--color-white);
+.cta-parallax-bg .parallax-layer {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(0px);
   opacity: 0.95;
-  margin-bottom: var(--space-xl);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  will-change: transform;
 }
 
-.cta-content .btn {
-  background: var(--color-white);
-  color: var(--color-accent);
+.cta-parallax-bg .layer-1 {
+  width: 520px;
+  height: 520px;
+  left: -180px;
+  top: -120px;
+  background: radial-gradient(circle, rgba(201, 181, 156, 0.26) 0%, transparent 70%);
 }
 
-.cta-content .btn:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
+.cta-parallax-bg .layer-2 {
+  width: 420px;
+  height: 420px;
+  right: -140px;
+  top: 10%;
+  background: radial-gradient(circle, rgba(217, 207, 199, 0.30) 0%, transparent 70%);
 }
+
+.cta-parallax-bg .layer-3 {
+  width: 620px;
+  height: 620px;
+  right: -220px;
+  bottom: -260px;
+  background: radial-gradient(circle, rgba(201, 181, 156, 0.18) 0%, transparent 72%);
+}
+
+.cta-parallax-bg .layer-grid {
+  inset: 0;
+  border-radius: 0;
+  background-image:
+    linear-gradient(rgba(201, 181, 156, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 181, 156, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+}
+
+.cta-shell {
+  position: relative;
+  z-index: 2;
+  border-radius: 28px;
+  padding: clamp(28px, 4vw, 48px);
+  background: rgba(249, 248, 246, 0.72);
+  border: 1px solid rgba(217, 207, 199, 0.70);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+/* subtle gradient “frame” */
+.cta-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 28px;
+  background: linear-gradient(135deg,
+    rgba(201, 181, 156, 0.70),
+    rgba(217, 207, 199, 0.35),
+    rgba(201, 181, 156, 0.65)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: rgba(17, 17, 17, 0.75);
+  background: linear-gradient(135deg, rgba(217, 207, 199, 0.70), rgba(201, 181, 156, 0.55));
+  border: 1px solid rgba(201, 181, 156, 0.45);
+  margin-bottom: 14px;
+}
+
+.cta-title {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  line-height: 1.08;
+  margin-bottom: 10px;
+  color: rgba(17, 17, 17, 0.92);
+}
+
+.cta-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(17, 17, 17, 0.70);
+  max-width: 70ch;
+  margin-bottom: 18px;
+}
+
+.cta-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.cta-highlights li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: rgba(17, 17, 17, 0.72);
+  line-height: 1.55;
+}
+
+.cta-highlights li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-top: 7px;
+  background: linear-gradient(135deg, var(--palette-3), var(--palette-4));
+  box-shadow: 0 10px 22px rgba(201, 181, 156, 0.35);
+  flex: 0 0 auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+/* JS “magnetic” effect uses .btn-cta */
+.btn-cta {
+  position: relative;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.btn-cta-outline {
+  background: rgba(249, 248, 246, 0.35);
+  border: 1px solid rgba(217, 207, 199, 0.85);
+}
+
+.cta-trust {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(217, 207, 199, 0.65);
+}
+
+.trust-item {
+  display: grid;
+  gap: 2px;
+}
+
+.trust-num {
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: rgba(17, 17, 17, 0.88);
+}
+
+.trust-label {
+  font-size: 0.92rem;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.trust-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(217, 207, 199, 0.75);
+}
+
+/* Particles */
+.cta-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-particles .particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  opacity: 0.65;
+  animation: cta-float 10s ease-in-out infinite;
+}
+
+.cta-particles .particle:nth-child(3n) { width: 4px; height: 4px; opacity: 0.55; }
+.cta-particles .particle:nth-child(4n) { width: 8px; height: 8px; opacity: 0.45; }
+
+@keyframes cta-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@media (max-width: 768px) {
+  .cta-trust {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .trust-divider { display: none; }
+}
+
 
 /* ============================================
    Service Page - Service Blocks
@@ -5415,3 +5623,5 @@ body.nav-open {
     transform: translateY(0);
   }
 }
+
+

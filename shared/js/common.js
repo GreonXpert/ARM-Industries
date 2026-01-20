@@ -1126,3 +1126,179 @@ function isInViewport(element) {
   }
   
 })();
+
+// ============================================
+// ENHANCED CTA SECTION - Parallax & Animations
+// ============================================
+
+(function() {
+  'use strict';
+  
+  function initEnhancedCTA() {
+    const ctaSection = document.querySelector('.cta-enhanced-section');
+    if (!ctaSection) return;
+    
+    // Initialize Parallax Effect
+    initCTAParallax();
+    
+    // Initialize Interactive Elements
+    initInteractiveButtons();
+    
+    // Initialize Particle Animation
+    initParticleAnimation();
+  }
+  
+  /* ============================================
+     PARALLAX SCROLL EFFECT
+     ============================================ */
+  
+  function initCTAParallax() {
+    const parallaxLayers = document.querySelectorAll('.cta-parallax-bg .parallax-layer');
+    if (parallaxLayers.length === 0) return;
+    
+    let ticking = false;
+    
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const ctaSection = document.querySelector('.cta-enhanced-section');
+      
+      if (!ctaSection) return;
+      
+      const rect = ctaSection.getBoundingClientRect();
+      const sectionTop = rect.top + scrolled;
+      const sectionHeight = rect.height;
+      const windowHeight = window.innerHeight;
+      
+      // Check if section is in viewport
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        parallaxLayers.forEach(layer => {
+          const speed = parseFloat(layer.getAttribute('data-speed')) || 0.5;
+          const yPos = (scrolled - sectionTop) * speed;
+          layer.style.transform = `translateY(${yPos}px)`;
+        });
+      }
+      
+      ticking = false;
+    }
+    
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+    
+    // Initial update
+    updateParallax();
+    
+    // Update on scroll
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Update on resize
+    window.addEventListener('resize', debounce(updateParallax, 100));
+  }
+  
+  /* ============================================
+     INTERACTIVE BUTTON EFFECTS
+     ============================================ */
+  
+  function initInteractiveButtons() {
+    const ctaButtons = document.querySelectorAll('.btn-cta');
+    
+    ctaButtons.forEach(button => {
+      // Magnetic effect on mouse move
+      button.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        const moveX = x * 0.1;
+        const moveY = y * 0.1;
+        
+        this.style.transform = `translate(${moveX}px, ${moveY}px) translateY(-4px)`;
+      });
+      
+      button.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+  }
+  
+  /* ============================================
+     PARTICLE ANIMATION
+     ============================================ */
+  
+  function initParticleAnimation() {
+    const particles = document.querySelectorAll('.cta-particles .particle');
+    
+    particles.forEach((particle, index) => {
+      // Random initial position
+      const randomX = Math.random() * 100;
+      const randomY = Math.random() * 100;
+      particle.style.left = randomX + '%';
+      particle.style.top = randomY + '%';
+      
+      // Add glow effect on hover
+      particle.addEventListener('mouseenter', function() {
+        this.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.8)';
+        this.style.transform = 'scale(2)';
+      });
+      
+      particle.addEventListener('mouseleave', function() {
+        this.style.boxShadow = '';
+        this.style.transform = '';
+      });
+    });
+  }
+  
+  /* ============================================
+     FLOATING CARDS INTERACTION
+     ============================================ */
+  
+  function initFloatingCards() {
+    const floatingCards = document.querySelectorAll('.floating-stat-card');
+    
+    floatingCards.forEach(card => {
+      // Add tilt effect on mouse move
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        this.style.transform = `
+          perspective(1000px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          translateY(-8px)
+          scale(1.05)
+        `;
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+  }
+  
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEnhancedCTA);
+  } else {
+    initEnhancedCTA();
+  }
+  
+  // Re-initialize floating cards
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFloatingCards);
+  } else {
+    initFloatingCards();
+  }
+  
+})();
+
