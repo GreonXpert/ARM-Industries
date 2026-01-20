@@ -490,3 +490,137 @@ function isInViewport(element) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+// ============================================
+// CLEAN CIRCULAR METRICS - Pop Out Effect
+// ============================================
+
+(function() {
+  const metricsSection = document.querySelector('.metrics-section');
+  if (!metricsSection) return;
+
+  // Smooth easing function
+  const easeOutCubic = (t) => {
+    return 1 - Math.pow(1 - t, 3);
+  };
+
+  // Counter animation with easing
+  const animateCounter = (element, target, suffix = '', duration = 2500) => {
+    const startTime = performance.now();
+    
+    const updateCounter = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      const current = Math.floor(easedProgress * target);
+      
+      // Format number with commas
+      element.textContent = current.toLocaleString() + suffix;
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toLocaleString() + suffix;
+      }
+    };
+    
+    requestAnimationFrame(updateCounter);
+  };
+
+  // Animate circular progress
+  const animateCircleProgress = (circle, percentage) => {
+    const radius = 85;
+    const circumference = 2 * Math.PI * radius;
+    const offset = circumference - (percentage / 100) * circumference;
+    
+    setTimeout(() => {
+      circle.style.strokeDashoffset = offset;
+    }, 200);
+  };
+
+  // Intersection Observer for scroll-triggered animation
+  const metricsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const metricItem = entry.target;
+        metricItem.classList.add('visible');
+        
+        // Animate number counter
+        const numberEl = metricItem.querySelector('.metric-number');
+        if (numberEl) {
+          const target = parseInt(numberEl.getAttribute('data-target'));
+          const suffix = numberEl.getAttribute('data-suffix') || '';
+          animateCounter(numberEl, target, suffix);
+        }
+        
+        // Animate progress circle
+        const progressCircle = metricItem.querySelector('.progress-ring-circle');
+        if (progressCircle) {
+          const progress = parseInt(progressCircle.getAttribute('data-progress'));
+          animateCircleProgress(progressCircle, progress);
+        }
+        
+        metricsObserver.unobserve(metricItem);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '-50px'
+  });
+
+  // Observe all metric items
+  const metricItems = document.querySelectorAll('.metric-item');
+  metricItems.forEach(item => {
+    metricsObserver.observe(item);
+  });
+
+  // Add magnetic cursor effect on hover (optional enhancement)
+  metricItems.forEach(item => {
+    const container = item.querySelector('.metric-circle-container');
+    
+    item.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const moveX = x * 0.1;
+      const moveY = y * 0.1;
+      
+      container.style.transform = `translate(${moveX}px, ${moveY}px) translateY(-20px) scale(1.12)`;
+    });
+    
+    item.addEventListener('mouseleave', () => {
+      container.style.transform = '';
+    });
+  });
+
+  // Parallax effect for background decorations
+  let ticking = false;
+  const decoCircles = document.querySelectorAll('.deco-circle');
+  
+  const updateParallax = () => {
+    const scrolled = window.pageYOffset;
+    const sectionTop = metricsSection.offsetTop;
+    const sectionHeight = metricsSection.offsetHeight;
+    
+    if (scrolled + window.innerHeight > sectionTop && 
+        scrolled < sectionTop + sectionHeight) {
+      const relativeScroll = scrolled - sectionTop;
+      
+      decoCircles.forEach((circle, index) => {
+        const speed = (index + 1) * 0.05;
+        const yPos = relativeScroll * speed;
+        circle.style.transform = `translateY(${yPos}px)`;
+      });
+    }
+    
+    ticking = false;
+  };
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  });
+})();
