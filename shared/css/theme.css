@@ -237,8 +237,30 @@ a:hover {
   color: var(--color-accent);
 }
 
-.nav-backdrop { 
-  display: none; 
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 299;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+.nav-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+body.nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .pill-nav {
@@ -333,21 +355,42 @@ a:hover {
 .nav-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--space-xs);
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 1001;
+  transition: all var(--transition-base);
 }
+
+.nav-toggle:hover {
+  background: rgba(217, 207, 199, 0.2);
+  border-radius: 8px;
+}
+
+.nav-toggle:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+
 
 .hamburger {
   width: 28px;
   height: 3px;
   background: var(--color-text);
-  border-radius: 2px;
-  transition: all var(--transition-base);
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   position: relative;
 }
+
 
 .hamburger::before,
 .hamburger::after {
@@ -356,18 +399,32 @@ a:hover {
   width: 28px;
   height: 3px;
   background: var(--color-text);
-  border-radius: 2px;
-  transition: all var(--transition-base);
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .hamburger::before { 
   top: -8px; 
+  left: 0;
 }
-
 .hamburger::after { 
   bottom: -8px; 
+  left: 0;
+}
+/* Active/Open State - Animated X */
+.nav-toggle.active .hamburger {
+  background: transparent;
 }
 
+.nav-toggle.active .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
 /* ============================================
    Hero Section (Home Page)
    ============================================ */
@@ -3046,5 +3103,159 @@ a:hover {
   .service-home-icon {
     width: 36px;
     height: 36px;
+  }
+}
+
+/* Desktop Navigation - Default State */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none !important;
+  }
+  
+  .nav-backdrop {
+    display: none !important;
+  }
+  
+  .pill-nav {
+    display: block !important;
+  }
+  
+  .nav-menu {
+    display: flex !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Mobile Navigation - Tablet and Below */
+@media (max-width: 768px) {
+  .nav-toggle { 
+    display: flex; 
+  }
+  
+  .nav-backdrop {
+    display: block;
+  }
+  
+  /* Hide pill nav container on mobile */
+  .pill-nav {
+    position: static;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  /* Mobile menu slides in from right */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    max-width: 85%;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    padding: 80px var(--space-lg) var(--space-xl);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    align-items: flex-start;
+    overflow-y: auto;
+    gap: var(--space-xs);
+    z-index: 300;
+    list-style: none;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  /* Mobile nav links */
+  .nav-link {
+    width: 100%;
+    padding: var(--space-md) var(--space-sm);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    font-size: var(--text-base);
+    color: var(--color-text);
+    transition: all var(--transition-base);
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background: var(--color-secondary);
+    color: var(--color-accent);
+    transform: translateX(8px);
+  }
+  
+  /* Hide pill indicator on mobile */
+  .pill-indicator {
+    display: none;
+  }
+}
+
+/* Very Small Mobile Devices */
+@media (max-width: 480px) {
+  .nav-menu {
+    width: 260px;
+    padding: 70px var(--space-md) var(--space-lg);
+  }
+  
+  .nav-link {
+    padding: var(--space-sm);
+    font-size: var(--text-sm);
+  }
+}
+
+/* ============================================
+   Accessibility Improvements
+   ============================================ */
+
+/* Focus states for keyboard navigation */
+.nav-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle,
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after,
+  .nav-menu,
+  .nav-backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ============================================
+   Header Scrolled State Mobile Fix
+   ============================================ */
+
+@media (max-width: 768px) {
+  .header.scrolled {
+    padding: 10px 0;
+  }
+  
+  /* Adjust menu top position when header is scrolled */
+  .header.scrolled .nav-menu {
+    padding-top: 70px;
   }
 }

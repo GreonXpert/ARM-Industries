@@ -6,27 +6,41 @@
 document.addEventListener('DOMContentLoaded', function() {
   
   // ============================================
-  // Mobile Navigation Toggle
+  // Mobile Navigation Toggle - FIXED VERSION
   // ============================================
   
   const navToggle = document.querySelector('.nav-toggle');
+  const pillNav = document.querySelector('.pill-nav');
   const navMenu = document.querySelector('.nav-menu');
+  const navBackdrop = document.querySelector('.nav-backdrop');
   const body = document.body;
   
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', function() {
+    // Toggle menu when clicking the hamburger button
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent immediate closing
       const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle all necessary states
       navToggle.setAttribute('aria-expanded', !isExpanded);
+      navToggle.classList.toggle('active');
       navMenu.classList.toggle('active');
+      if (pillNav) pillNav.classList.toggle('active');
+      if (navBackdrop) navBackdrop.classList.toggle('active');
       body.classList.toggle('nav-open');
     });
     
+    // Close menu when clicking the backdrop
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', function() {
+        closeMenu();
+      });
+    }
+    
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-      if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        body.classList.remove('nav-open');
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && !pillNav.contains(e.target)) {
+        closeMenu();
       }
     });
     
@@ -34,11 +48,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        body.classList.remove('nav-open');
+        closeMenu();
       });
     });
+    
+    // Helper function to close menu
+    function closeMenu() {
+      navMenu.classList.remove('active');
+      if (pillNav) pillNav.classList.remove('active');
+      navToggle.classList.remove('active');
+      if (navBackdrop) navBackdrop.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      body.classList.remove('nav-open');
+    }
   }
   
   // ============================================
@@ -46,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   
   function setActiveNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'navbar.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
       const linkPage = link.getAttribute('href').split('/').pop();
       if (linkPage === currentPage || 
-          (currentPage === '' && linkPage === 'navbar.html') ||
-          (currentPage === 'navbar.html' && linkPage === 'navbar.html')) {
+          (currentPage === '' && linkPage === 'index.html') ||
+          (currentPage === 'index.html' && linkPage === 'index.html')) {
         link.classList.add('active');
       }
     });
