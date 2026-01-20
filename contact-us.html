@@ -23,27 +23,30 @@
   <header class="header">
     <div class="container">
       <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-brand">
-          <a href="../navbar/navbar.html" class="brand-link">
-            <span class="brand-name">AMR Industrials</span>
-          </a>
-        </div>
-        
-        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <a href="index.html" class="brand-link" aria-label="AMR Industrials Home">
+          <span class="brand-name">AMR Industrials</span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="pillNav" aria-label="Toggle navigation">
           <span class="hamburger"></span>
         </button>
-        
-        <ul class="nav-menu">
-          <li><a href="../navbar/navbar.html" class="nav-link">Home</a></li>
-          <li><a href="../about/about.html" class="nav-link">About</a></li>
-          <li><a href="../service/service.html" class="nav-link">Services</a></li>
-          <li><a href="../team/team.html" class="nav-link">Team</a></li>
-          <li><a href="contact-us.html" class="nav-link">Contact</a></li>
-        </ul>
+
+        <div class="nav-backdrop" aria-hidden="true"></div>
+
+        <div class="pill-nav" id="pillNav">
+          <span class="pill-indicator" aria-hidden="true"></span>
+          <ul class="nav-menu" role="list">
+            <li class="nav-item"><a href="index.html" class="nav-link"><span class="nav-label">Home</span></a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link"><span class="nav-label">About</span></a></li>
+            <li class="nav-item"><a href="service.html" class="nav-link"><span class="nav-label">Services</span></a></li>
+            <li class="nav-item"><a href="team.html" class="nav-link"><span class="nav-label">Team</span></a></li>
+            <li class="nav-item"><a href="contact-us.html" class="nav-link"><span class="nav-label">Contact</span></a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
-  
+
   <!-- Main Content -->
   <main id="main-content">
     
