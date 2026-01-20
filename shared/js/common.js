@@ -646,3 +646,261 @@ function isInViewport(element) {
     }
   });
 })();
+
+/* ============================================
+   ENHANCED ABOUT SECTION - PARALLAX JAVASCRIPT
+   ============================================ */
+
+(function() {
+  'use strict';
+  
+  // Wait for DOM to be fully loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAboutParallax);
+  } else {
+    initAboutParallax();
+  }
+  
+  function initAboutParallax() {
+    const aboutSection = document.getElementById('about-section');
+    if (!aboutSection) return;
+    
+    // Initialize AOS (Animate On Scroll)
+    initAOS();
+    
+    // Initialize Parallax Effects
+    initParallaxScroll();
+    
+    // Initialize Floating Cards
+    initFloatingCards();
+    
+    // Initialize Interactive Hover Effects
+    initInteractiveHovers();
+  }
+  
+  /* ============================================
+     AOS - ANIMATE ON SCROLL INITIALIZATION
+     ============================================ */
+  
+  function initAOS() {
+    // Simple AOS-like functionality
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+          // Don't unobserve so animations can repeat if needed
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all elements with data-aos attribute
+    const aosElements = document.querySelectorAll('[data-aos]');
+    aosElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+  
+  /* ============================================
+     PARALLAX SCROLL EFFECTS
+     ============================================ */
+  
+  function initParallaxScroll() {
+    const parallaxElements = document.querySelectorAll('[data-parallax-speed]');
+    if (parallaxElements.length === 0) return;
+    
+    let ticking = false;
+    
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      
+      parallaxElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top + scrolled;
+        const elementHeight = rect.height;
+        
+        // Check if element is in viewport
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const speed = parseFloat(element.getAttribute('data-parallax-speed')) || 0.5;
+          
+          // Calculate parallax offset
+          const yPos = (scrolled - elementTop) * speed;
+          
+          // Apply transform
+          element.style.transform = `translateY(${yPos}px)`;
+        }
+      });
+      
+      ticking = false;
+    }
+    
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }
+    
+    // Initial update
+    updateParallax();
+    
+    // Update on scroll
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Update on resize
+    window.addEventListener('resize', debounce(updateParallax, 100));
+  }
+  
+  /* ============================================
+     FLOATING CARDS ENHANCED ANIMATION
+     ============================================ */
+  
+  function initFloatingCards() {
+    const floatingCards = document.querySelectorAll('.stat-float-card');
+    if (floatingCards.length === 0) return;
+    
+    floatingCards.forEach(card => {
+      // Add magnetic hover effect
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        const moveX = x * 0.15;
+        const moveY = y * 0.15;
+        
+        this.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+  }
+  
+  /* ============================================
+     INTERACTIVE HOVER EFFECTS
+     ============================================ */
+  
+  function initInteractiveHovers() {
+    // Milestone Icons
+    const milestoneIcons = document.querySelectorAll('.milestone-icon');
+    milestoneIcons.forEach(icon => {
+      icon.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.15) rotate(5deg)';
+      });
+      
+      icon.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+    
+    // Value Cards
+    const valueCards = document.querySelectorAll('.value-card-enhanced');
+    valueCards.forEach((card, index) => {
+      card.addEventListener('mouseenter', function() {
+        // Add subtle tilt based on mouse position
+        this.addEventListener('mousemove', handleCardTilt);
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.removeEventListener('mousemove', handleCardTilt);
+        this.style.transform = '';
+      });
+    });
+    
+    function handleCardTilt(e) {
+      const card = this;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+      
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateY(-12px)
+        scale(1.02)
+      `;
+    }
+  }
+  
+  /* ============================================
+     SCROLL PROGRESS INDICATOR (OPTIONAL)
+     ============================================ */
+  
+  function initScrollProgress() {
+    const aboutSection = document.getElementById('about-section');
+    if (!aboutSection) return;
+    
+    let ticking = false;
+    
+    function updateScrollProgress() {
+      const rect = aboutSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate how much of the section is visible
+      let progress = 0;
+      
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        progress = visibleHeight / rect.height;
+      }
+      
+      // Apply progress-based effects
+      const journeyPath = aboutSection.querySelector('.journey-timeline-path');
+      if (journeyPath) {
+        journeyPath.style.transform = `scaleY(${progress})`;
+        journeyPath.style.transformOrigin = 'top';
+      }
+      
+      ticking = false;
+    }
+    
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollProgress);
+        ticking = true;
+      }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
+  }
+  
+  /* ============================================
+     UTILITY FUNCTIONS
+     ============================================ */
+  
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+  
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  
+  if (prefersReducedMotion.matches) {
+    // Disable all animations for users who prefer reduced motion
+    document.documentElement.style.setProperty('--transition-base', '0ms');
+    document.documentElement.style.setProperty('--transition-slow', '0ms');
+  }
+  
+})();

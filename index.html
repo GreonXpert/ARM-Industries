@@ -476,85 +476,242 @@
   </div>
 </section>
 
-    <!-- About Section -->
-    <section class="about-home-section section">
-      <div class="container">
-        <div class="about-home-grid">
-          <div class="about-home-content slide-in-left">
-            <h2>A Legacy Built on Precision</h2>
-            <p class="lead-text">Since 1990, AMR Industrials has been at the forefront of precision engineering, evolving from a modest two-machine workshop into a trusted manufacturing powerhouse.</p>
-            
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <svg class="highlight-icon" viewBox="0 0 64 64">
-                  <circle cx="32" cy="32" r="24" fill="var(--color-accent)" opacity="0.2"/>
-                  <path d="M32 14 L38 26 L51 28 L41 37 L44 50 L32 43 L20 50 L23 37 L13 28 L26 26 Z" fill="var(--color-accent)"/>
-                </svg>
-                <div>
-                  <h3>Quality Matters</h3>
-                  <p>Our absolute philosophy - the foundation of every component and partnership.</p>
-                </div>
-              </div>
-              
-              <div class="highlight-item">
-                <svg class="highlight-icon" viewBox="0 0 64 64">
-                  <rect x="12" y="12" width="40" height="40" rx="4" fill="var(--color-accent)" opacity="0.2"/>
-                  <path d="M26 32 L30 36 L38 28" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
-                </svg>
-                <div>
-                  <h3>Proven Track Record</h3>
-                  <p>Trusted Tier-1 and Tier-2 supplier to global leaders like ELGI and Schneider Electric.</p>
-                </div>
-              </div>
-              
-              <div class="highlight-item">
-                <svg class="highlight-icon" viewBox="0 0 64 64">
-                  <circle cx="32" cy="32" r="24" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
-                  <polyline points="32 16 32 32 44 32" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
-                </svg>
-                <div>
-                  <h3>Continuous Innovation</h3>
-                  <p>Constantly investing in advanced machinery and workforce excellence.</p>
-                </div>
-              </div>
+ <!-- Enhanced About Section with Parallax Effects -->
+<section class="about-home-section section" id="about-section">
+  <div class="container">
+    
+    <!-- Section Header -->
+    <div class="about-section-header fade-in">
+      <h2 class="section-title">A Legacy Built on Precision</h2>
+      <p class="section-subtitle">From a modest two-machine workshop to a trusted manufacturing powerhouse</p>
+    </div>
+    
+    <!-- Main Content Grid -->
+    <div class="about-enhanced-grid">
+      
+      <!-- Left: Journey Timeline with Parallax -->
+      <div class="about-journey-container">
+        <div class="journey-parallax-wrapper" data-parallax-speed="0.3">
+          
+          <!-- Timeline Path -->
+          <div class="journey-timeline-path"></div>
+          
+          <!-- Milestone 1: Founding -->
+          <div class="journey-milestone" data-aos="fade-up" data-aos-delay="100">
+            <div class="milestone-icon">
+              <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="var(--accent-orange)" opacity="0.2"/>
+                <circle cx="32" cy="32" r="20" fill="var(--accent-orange)"/>
+                <text x="32" y="38" text-anchor="middle" font-size="16" font-weight="bold" fill="white">90</text>
+              </svg>
             </div>
-            
-            <a href="about.html" class="btn btn-primary">Discover Our Story</a>
+            <div class="milestone-content">
+              <h3>1990: The Beginning</h3>
+              <p>Founded with just two lathe machines and a vision for precision</p>
+            </div>
           </div>
           
-          <div class="about-home-visual slide-in-right">
-            <div class="visual-card">
-              <svg viewBox="0 0 400 400" class="about-illustration">
-                <rect x="50" y="100" width="300" height="200" rx="10" fill="var(--color-tertiary)" opacity="0.2"/>
-                <rect x="80" y="130" width="240" height="140" rx="8" fill="var(--color-accent)" opacity="0.3"/>
-                
-                <!-- Factory building -->
-                <rect x="120" y="160" width="160" height="100" fill="var(--color-accent)"/>
-                <rect x="140" y="180" width="40" height="40" fill="var(--color-white)" opacity="0.8"/>
-                <rect x="220" y="180" width="40" height="40" fill="var(--color-white)" opacity="0.8"/>
-                <polygon points="200,140 120,160 280,160" fill="var(--color-text)" opacity="0.6"/>
-                
-                <!-- Gear -->
-                <circle cx="300" cy="200" r="40" fill="var(--color-tertiary)" opacity="0.4"/>
-                <circle cx="300" cy="200" r="25" fill="var(--color-accent)"/>
-                <circle cx="300" cy="200" r="12" fill="var(--color-white)"/>
+          <!-- Milestone 2: Establishment -->
+          <div class="journey-milestone" data-aos="fade-up" data-aos-delay="200">
+            <div class="milestone-icon">
+              <svg viewBox="0 0 64 64">
+                <rect x="8" y="8" width="48" height="48" rx="8" fill="var(--accent-blue)" opacity="0.2"/>
+                <rect x="16" y="16" width="32" height="32" rx="4" fill="var(--accent-blue)"/>
+                <path d="M26 32 L30 36 L38 28" stroke="white" stroke-width="3" fill="none"/>
               </svg>
+            </div>
+            <div class="milestone-content">
+              <h3>1994: Formal Establishment</h3>
+              <p>Officially registered as AMR Industrials corporate entity</p>
+            </div>
+          </div>
+          
+          <!-- Milestone 3: Growth -->
+          <div class="journey-milestone" data-aos="fade-up" data-aos-delay="300">
+            <div class="milestone-icon">
+              <svg viewBox="0 0 64 64">
+                <circle cx="32" cy="32" r="28" fill="var(--accent-green)" opacity="0.2"/>
+                <path d="M20 40 L32 20 L44 40" fill="none" stroke="var(--accent-green)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="32" cy="20" r="4" fill="var(--accent-green)"/>
+              </svg>
+            </div>
+            <div class="milestone-content">
+              <h3>2000s: Strategic Growth</h3>
+              <p>Expanded to 60+ machines and global partnerships</p>
+            </div>
+          </div>
+          
+          <!-- Milestone 4: Present -->
+          <div class="journey-milestone" data-aos="fade-up" data-aos-delay="400">
+            <div class="milestone-icon">
+              <svg viewBox="0 0 64 64">
+                <polygon points="32,8 54,24 54,48 32,56 10,48 10,24" fill="#9B59B6" opacity="0.2"/>
+                <polygon points="32,16 48,28 48,44 32,50 16,44 16,28" fill="#9B59B6"/>
+                <circle cx="32" cy="32" r="6" fill="white"/>
+              </svg>
+            </div>
+            <div class="milestone-content">
+              <h3>Today: Industry Leader</h3>
+              <p>Trusted Tier-1 supplier to global manufacturing giants</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Right: Visual Showcase with Parallax Layers -->
+      <div class="about-visual-container">
+        <div class="visual-parallax-scene">
+          
+          <!-- Background Layer - Slowest -->
+          <div class="parallax-layer layer-bg" data-parallax-speed="0.1">
+            <svg viewBox="0 0 500 500" class="layer-svg">
+              <!-- Gears background -->
+              <circle cx="100" cy="100" r="60" fill="var(--color-tertiary)" opacity="0.15"/>
+              <circle cx="400" cy="400" r="80" fill="var(--color-accent)" opacity="0.1"/>
+              <circle cx="420" cy="120" r="50" fill="var(--color-secondary)" opacity="0.2"/>
+            </svg>
+          </div>
+          
+          <!-- Middle Layer - Factory -->
+          <div class="parallax-layer layer-middle" data-parallax-speed="0.25">
+            <svg viewBox="0 0 500 500" class="layer-svg">
+              <!-- Factory Building -->
+              <rect x="150" y="220" width="200" height="150" fill="var(--color-accent)" opacity="0.6"/>
+              <rect x="170" y="250" width="50" height="50" fill="var(--color-white)" opacity="0.7"/>
+              <rect x="240" y="250" width="50" height="50" fill="var(--color-white)" opacity="0.7"/>
+              <rect x="310" y="250" width="25" height="50" fill="var(--color-white)" opacity="0.7"/>
+              <polygon points="250,200 150,220 350,220" fill="var(--color-text)" opacity="0.5"/>
               
-              <div class="stats-overlay">
-                <div class="stat-badge">
-                  <div class="badge-number">1990</div>
-                  <div class="badge-label">Founded</div>
-                </div>
-                <div class="stat-badge">
-                  <div class="badge-number">7,000</div>
-                  <div class="badge-label">Sq. Ft. Facility</div>
-                </div>
+              <!-- Chimney smoke -->
+              <rect x="330" y="160" width="20" height="60" fill="var(--color-text)" opacity="0.4"/>
+              <circle cx="340" cy="145" r="8" fill="var(--color-secondary)" opacity="0.3" class="smoke-puff"/>
+            </svg>
+          </div>
+          
+          <!-- Foreground Layer - Machines & Gears -->
+          <div class="parallax-layer layer-front" data-parallax-speed="0.5">
+            <svg viewBox="0 0 500 500" class="layer-svg">
+              <!-- Large Gear -->
+              <g class="rotating-gear">
+                <circle cx="380" cy="320" r="70" fill="var(--color-accent)" opacity="0.3"/>
+                <circle cx="380" cy="320" r="50" fill="var(--color-accent)" opacity="0.5"/>
+                <circle cx="380" cy="320" r="25" fill="var(--color-accent)"/>
+                <circle cx="380" cy="320" r="15" fill="var(--color-white)"/>
+              </g>
+              
+              <!-- Small Gear -->
+              <g class="rotating-gear-reverse">
+                <circle cx="120" cy="380" r="40" fill="var(--accent-blue)" opacity="0.3"/>
+                <circle cx="120" cy="380" r="28" fill="var(--accent-blue)" opacity="0.5"/>
+                <circle cx="120" cy="380" r="15" fill="var(--accent-blue)"/>
+                <circle cx="120" cy="380" r="8" fill="var(--color-white)"/>
+              </g>
+            </svg>
+          </div>
+          
+          <!-- Floating Stats Cards -->
+          <div class="floating-stats-container">
+            <div class="stat-float-card" data-aos="fade-up" data-aos-delay="100" data-float-speed="2">
+              <div class="stat-icon">
+                <svg viewBox="0 0 48 48">
+                  <circle cx="24" cy="24" r="20" fill="var(--accent-orange)" opacity="0.2"/>
+                  <text x="24" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--accent-orange)">40+</text>
+                </svg>
+              </div>
+              <div class="stat-text">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Years Excellence</div>
+              </div>
+            </div>
+            
+            <div class="stat-float-card" data-aos="fade-up" data-aos-delay="200" data-float-speed="2.5">
+              <div class="stat-icon">
+                <svg viewBox="0 0 48 48">
+                  <rect x="8" y="8" width="32" height="32" rx="4" fill="var(--accent-blue)" opacity="0.2"/>
+                  <text x="24" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--accent-blue)">60+</text>
+                </svg>
+              </div>
+              <div class="stat-text">
+                <div class="stat-number">60+</div>
+                <div class="stat-label">Machines</div>
+              </div>
+            </div>
+            
+            <div class="stat-float-card" data-aos="fade-up" data-aos-delay="300" data-float-speed="3">
+              <div class="stat-icon">
+                <svg viewBox="0 0 48 48">
+                  <polygon points="24,8 36,18 36,34 24,40 12,34 12,18" fill="var(--accent-green)" opacity="0.2"/>
+                  <text x="24" y="30" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--accent-green)">7K</text>
+                </svg>
+              </div>
+              <div class="stat-text">
+                <div class="stat-number">7,000</div>
+                <div class="stat-label">Sq. Ft. Facility</div>
               </div>
             </div>
           </div>
+          
         </div>
       </div>
-    </section>
+      
+    </div>
+    
+    <!-- Core Values Section -->
+    <div class="about-values-showcase" data-aos="fade-up" data-aos-delay="200">
+      <div class="values-grid-enhanced">
+        
+        <div class="value-card-enhanced" data-aos="zoom-in" data-aos-delay="100">
+          <div class="value-icon-wrapper">
+            <svg viewBox="0 0 64 64" class="value-icon-svg">
+              <circle cx="32" cy="32" r="28" fill="var(--accent-orange)" opacity="0.2"/>
+              <path d="M32 14 L38 26 L51 28 L41 37 L44 50 L32 43 L20 50 L23 37 L13 28 L26 26 Z" fill="var(--accent-orange)"/>
+            </svg>
+          </div>
+          <h3>Quality Matters</h3>
+          <p>Our absolute philosophy - the foundation of every component and partnership we build.</p>
+        </div>
+        
+        <div class="value-card-enhanced" data-aos="zoom-in" data-aos-delay="200">
+          <div class="value-icon-wrapper">
+            <svg viewBox="0 0 64 64" class="value-icon-svg">
+              <rect x="10" y="10" width="44" height="44" rx="6" fill="var(--accent-blue)" opacity="0.2"/>
+              <path d="M22 32 L28 38 L42 24" stroke="var(--accent-blue)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Proven Excellence</h3>
+          <p>Trusted Tier-1 supplier to global leaders like ELGI and Schneider Electric.</p>
+        </div>
+        
+        <div class="value-card-enhanced" data-aos="zoom-in" data-aos-delay="300">
+          <div class="value-icon-wrapper">
+            <svg viewBox="0 0 64 64" class="value-icon-svg">
+              <circle cx="32" cy="32" r="28" stroke="var(--accent-green)" stroke-width="4" fill="none" opacity="0.3"/>
+              <path d="M20 38 L32 20 L44 38" fill="none" stroke="var(--accent-green)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Continuous Innovation</h3>
+          <p>Constantly investing in advanced machinery and workforce excellence.</p>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="about-cta-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <a href="about.html" class="btn btn-primary btn-lg">Discover Our Complete Story</a>
+    </div>
+    
+  </div>
+  
+  <!-- Floating Background Elements -->
+  <div class="about-bg-elements" aria-hidden="true">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-circle bg-circle-3"></div>
+  </div>
+  
+</section>
 
     <!-- Services Section -->
     <section class="services-home-section section">
