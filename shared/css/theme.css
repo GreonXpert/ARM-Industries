@@ -10985,3 +10985,209 @@ body.nav-open {
     height: 300px;
   }
 }
+
+/* ============================================
+   CONTACT BUSINESS CTA - Custom Variations
+   ============================================ */
+
+.contact-business-variant {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(230, 126, 34, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(52, 152, 219, 0.10) 0%, transparent 50%),
+    linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.contact-shell {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(230, 126, 34, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gradient border effect */
+.contact-shell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-blue), var(--accent-orange));
+  background-size: 200% 100%;
+  animation: borderGlow 8s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Badge styling override for contact */
+.contact-badge {
+  background: linear-gradient(135deg, rgba(230, 126, 34, 0.15), rgba(230, 126, 34, 0.05));
+  border: 1px solid rgba(230, 126, 34, 0.3);
+  color: var(--accent-orange);
+}
+
+.contact-badge svg {
+  stroke: var(--accent-orange);
+  animation: phoneRing 2s ease-in-out infinite;
+}
+
+@keyframes phoneRing {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(5deg); }
+  40% { transform: rotate(0deg); }
+}
+
+/* Title specific styling */
+.contact-title {
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--accent-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Highlights with custom icons */
+.contact-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(201, 181, 156, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-highlights li:last-child {
+  border-bottom: none;
+}
+
+.contact-highlights li:hover {
+  transform: translateX(8px);
+  color: var(--color-text);
+}
+
+.contact-highlights svg {
+  flex-shrink: 0;
+  animation: checkPop 0.5s ease forwards;
+  opacity: 0;
+}
+
+.contact-shell:hover .contact-highlights svg {
+  animation: checkPop 0.5s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+@keyframes checkPop {
+  0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+  70% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Stagger animations for list items */
+.contact-highlights li:nth-child(1) { --i: 1; }
+.contact-highlights li:nth-child(2) { --i: 2; }
+.contact-highlights li:nth-child(3) { --i: 3; }
+.contact-highlights li:nth-child(4) { --i: 4; }
+
+/* Button hover effects specific to contact */
+.contact-btn-main {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact-btn-main::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+
+.contact-btn-main:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contact-btn-main svg {
+  transition: transform 0.3s ease;
+}
+
+.contact-btn-main:hover svg {
+  transform: translateX(4px);
+}
+
+.contact-btn-secondary {
+  transition: all 0.3s ease;
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.contact-btn-secondary:hover {
+  background: var(--accent-orange);
+  color: white;
+  border-color: var(--accent-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(230, 126, 34, 0.2);
+}
+
+/* Trust indicators special styling */
+.contact-trust {
+  background: linear-gradient(135deg, rgba(249, 248, 246, 0.8), rgba(255, 255, 255, 0.9));
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 28px;
+  border: 1px solid rgba(201, 181, 156, 0.3);
+}
+
+.contact-trust .trust-num {
+  background: linear-gradient(135deg, var(--accent-orange), #D35400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+/* Particle animations specific to contact */
+.contact-particles .particle {
+  background: rgba(230, 126, 34, 0.6);
+  box-shadow: 0 0 10px rgba(230, 126, 34, 0.4);
+}
+
+/* Entrance animations */
+.contact-shell {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact-shell.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-highlights li:hover {
+    transform: translateX(4px);
+  }
+  
+  .contact-trust {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .contact-trust .trust-divider {
+    display: none;
+  }
+}

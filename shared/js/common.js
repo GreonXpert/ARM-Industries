@@ -2829,3 +2829,139 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// CONTACT BUSINESS CTA - Enhanced Interactions
+// ============================================
+
+(function() {
+  'use strict';
+  
+  function initContactCTA() {
+    const contactSection = document.getElementById('contact-business');
+    if (!contactSection) return;
+    
+    // Initialize intersection observer for entrance animation
+    const shell = contactSection.querySelector('.contact-shell');
+    if (shell) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Animate trust numbers with counter effect
+            animateTrustNumbers(contactSection);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '-50px'
+      });
+      
+      observer.observe(shell);
+    }
+    
+    // Magnetic button effect for contact buttons
+    const magneticBtns = contactSection.querySelectorAll('.contact-btn-main, .contact-btn-secondary');
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        const moveX = x * 0.15;
+        const moveY = y * 0.15;
+        
+        this.style.transform = `translate(${moveX}px, ${moveY}px) translateY(-4px)`;
+      });
+      
+      btn.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+    
+    // Parallax speed variation for contact section (reuses existing parallax but with different speeds)
+    const parallaxLayers = contactSection.querySelectorAll('.parallax-layer');
+    let ticking = false;
+    
+    function updateContactParallax() {
+      const scrolled = window.pageYOffset;
+      const sectionTop = contactSection.offsetTop;
+      const relativeScroll = scrolled - sectionTop + window.innerHeight;
+      
+      if (scrolled + window.innerHeight > sectionTop && 
+          scrolled < sectionTop + contactSection.offsetHeight) {
+        
+        parallaxLayers.forEach((layer, index) => {
+          const speed = parseFloat(layer.getAttribute('data-speed')) || 0.1;
+          const yPos = (relativeScroll - window.innerHeight) * speed;
+          const rotation = (relativeScroll * 0.01 * (index + 1)) % 360;
+          
+          // Combine vertical movement with subtle rotation for some layers
+          if (layer.classList.contains('layer-grid')) {
+            layer.style.transform = `translateY(${yPos}px)`;
+          } else {
+            layer.style.transform = `translateY(${yPos}px) rotate(${index === 1 ? rotation * 0.5 : 0}deg)`;
+          }
+        });
+      }
+      
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateContactParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+  
+  // Animate trust numbers with counting effect
+  function animateTrustNumbers(section) {
+    const trustNums = section.querySelectorAll('.trust-num');
+    
+    trustNums.forEach(num => {
+      const text = num.textContent;
+      const numericValue = parseInt(text.replace(/\D/g, ''));
+      const suffix = text.replace(/[0-9]/g, '');
+      
+      if (!isNaN(numericValue)) {
+        let current = 0;
+        const increment = numericValue / 30; // 30 frames for animation
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= numericValue) {
+            num.textContent = text; // Restore original text with suffix
+            clearInterval(timer);
+            
+            // Add pulse effect after counting
+            num.style.animation = 'numberPulse 0.6s ease';
+          } else {
+            num.textContent = Math.floor(current) + suffix;
+          }
+        }, 30);
+      }
+    });
+  }
+  
+  // Add number pulse animation styles dynamically
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes numberPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactCTA);
+  } else {
+    initContactCTA();
+  }
+  
+})();
