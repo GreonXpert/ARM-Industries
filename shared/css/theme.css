@@ -10961,8 +10961,9 @@ body.nav-open {
 
 @media (max-width: 768px) {
   .contact-hero-video {
-    height: 70vh;
+    height: 100vh;
     min-height: 500px;
+    width: 100%;
   }
   
   .floating-location-card {
@@ -11189,5 +11190,293 @@ body.nav-open {
   
   .contact-trust .trust-divider {
     display: none;
+  }
+}
+/* ============================================
+   CONTACT PAGE MOBILE FIXES
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Hero Section Mobile Fixes */
+  .contact-hero-video {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0 60px;
+  }
+  
+  .hero-content-wrapper {
+    margin-top: 0;
+    padding: 0 20px;
+  }
+  
+  .hero-split-text {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .hero-text-left,
+  .hero-text-right {
+    text-align: center;
+  }
+  
+  .hero-title-video {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .hero-title-video.secondary {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  
+  .hero-line,
+  .hero-line.right {
+    margin: 15px auto 0;
+  }
+  
+  .hero-subtitle-wrapper {
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Quick Contact Bar Mobile */
+  .contact-quick-bar {
+    margin-top: -30px;
+    padding: 30px 0;
+  }
+  
+  .quick-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 20px;
+  }
+  
+  .quick-contact-item {
+    padding: 20px;
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .quick-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Contact Section Mobile */
+  .contact-grid-enhanced {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-footer {
+    flex-direction: column-reverse;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .form-assurance {
+    justify-content: center;
+  }
+  
+  .btn-submit {
+    width: 100%;
+  }
+
+  /* Info Cards Mobile */
+  .info-list-item {
+    padding: 15px;
+  }
+  
+  .info-icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Map Section Mobile */
+  .map-container {
+    height: 400px;
+    flex-direction: column;
+  }
+  
+  .floating-location-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 20px;
+    border-radius: 12px;
+    min-width: auto;
+    width: calc(100% - 40px);
+  }
+  
+  .map-header h2 {
+    font-size: 2rem;
+  }
+
+  /* CTA Section Mobile */
+  .cta-shell {
+    padding: 30px 24px;
+    margin: 0 20px;
+  }
+  
+  .cta-title {
+    font-size: 1.8rem;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cta-highlights {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra Small Devices */
+  .hero-title-video {
+    font-size: 2rem;
+  }
+  
+  .hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .quick-contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .quick-value {
+    font-size: 1rem;
+    word-break: break-all;
+  }
+  
+  .form-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  
+  .form-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .floating-location-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .location-icon {
+    margin: 0 auto;
+  }
+  
+  .gst-number {
+    font-size: 0.9rem;
+    letter-spacing: 0;
+  }
+  
+  .section-header-enhanced .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Fix for floating labels on mobile touch */
+@media (hover: none) and (pointer: coarse) {
+  .form-group.floating-label input:focus + label,
+  .form-group.floating-label input:not(:placeholder-shown) + label,
+  .form-group.floating-label select:focus + label,
+  .form-group.floating-label select:valid + label,
+  .form-group.floating-label textarea:focus + label,
+  .form-group.floating-label textarea:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.75rem;
+    background: white;
+    padding: 0 4px;
+  }
+  
+  .form-group.floating-label input,
+  .form-group.floating-label select,
+  .form-group.floating-label textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+/* Navigation Mobile Fixes Enhancement */
+@media (max-width: 768px) {
+  .nav-menu {
+    width: 280px;
+    padding: 100px 30px 30px;
+    gap: 8px;
+  }
+  
+  .nav-link {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    background: rgba(249, 248, 246, 0.5);
+    margin-bottom: 8px;
+  }
+  
+  .nav-link:hover {
+    background: var(--color-secondary);
+    transform: translateX(5px);
+  }
+  
+  .pill-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: right 0.4s ease;
+    z-index: 299;
+  }
+  
+  .pill-nav.active {
+    right: 0;
+  }
+  
+  .nav-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+  }
+  
+  body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
   }
 }

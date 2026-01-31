@@ -2965,3 +2965,165 @@ document.head.appendChild(style);
   }
   
 })();
+
+// ============================================
+// MOBILE SPECIFIC FIXES FOR CONTACT PAGE
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Fix for iOS viewport height issue with video hero
+  function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  
+  setVH();
+  window.addEventListener('resize', setVH);
+  
+  // Mobile menu touch improvements
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const pillNav = document.querySelector('.pill-nav');
+  
+  if (navToggle && window.innerWidth <= 768) {
+    // Close menu when touching outside
+    document.addEventListener('touchstart', function(e) {
+      if (pillNav.classList.contains('active') && 
+          !pillNav.contains(e.target) && 
+          !navToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+    
+    // Prevent body scroll when menu is open
+    navToggle.addEventListener('click', function() {
+      if (pillNav.classList.contains('active')) {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.height = '';
+      } else {
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.height = '100%';
+      }
+    });
+  }
+  
+  function closeMobileMenu() {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.classList.remove('active');
+    navMenu.classList.remove('active');
+    if (pillNav) pillNav.classList.remove('active');
+    document.body.classList.remove('nav-open');
+    
+    // Reset body styles
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.height = '';
+  }
+  
+  // Fix for mobile form input zoom (iOS)
+  const inputs = document.querySelectorAll('input, select, textarea');
+  inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+      if (window.innerWidth <= 768) {
+        // Scroll element into view with offset for fixed header
+        setTimeout(() => {
+          const headerOffset = 80;
+          const elementPosition = this.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, 300);
+      }
+    });
+  });
+  
+  // Touch-friendly FAQ accordion (if exists)
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
+  faqTriggers.forEach(trigger => {
+    trigger.addEventListener('touchstart', function(e) {
+      // Prevent double-tap zoom on iOS
+      e.preventDefault();
+      this.click();
+    }, { passive: false });
+  });
+  
+  // Map iframe lazy loading for mobile performance
+  const mapIframe = document.querySelector('.map-container iframe');
+  if (mapIframe && window.innerWidth <= 768) {
+    // Load map only when visible on mobile to save data
+    const mapObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const src = mapIframe.getAttribute('data-src');
+          if (src) {
+            mapIframe.src = src;
+            mapIframe.removeAttribute('data-src');
+          }
+          mapObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '50px' });
+    
+    mapObserver.observe(mapIframe);
+  }
+  
+  // Handle orientation change
+  window.addEventListener('orientationchange', function() {
+    // Close mobile menu on orientation change
+    if (pillNav && pillNav.classList.contains('active')) {
+      closeMobileMenu();
+    }
+    
+    // Reset VH unit
+    setTimeout(setVH, 100);
+  });
+  
+  // Floating Location Card mobile positioning
+  const floatingCard = document.querySelector('.floating-location-card');
+  if (floatingCard && window.innerWidth <= 768) {
+    // Make card draggable on mobile for better UX
+    let isDragging = false;
+    let startY = 0;
+    let currentY = 0;
+    
+    floatingCard.addEventListener('touchstart', function(e) {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+      this.style.transition = 'none';
+    }, { passive: true });
+    
+    floatingCard.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      currentY = e.touches[0].clientY;
+      const diff = currentY - startY;
+      
+      if (diff > 0) { // Only allow dragging down
+        this.style.transform = `translateY(${diff}px)`;
+      }
+    }, { passive: true });
+    
+    floatingCard.addEventListener('touchend', function() {
+      isDragging = false;
+      this.style.transition = 'transform 0.3s ease';
+      
+      if (currentY - startY > 100) {
+        // Dismiss card if dragged down enough
+        this.style.transform = 'translateY(200%)';
+        setTimeout(() => {
+          this.style.display = 'none';
+        }, 300);
+      } else {
+        this.style.transform = 'translateY(0)';
+      }
+    });
+  }
+});
