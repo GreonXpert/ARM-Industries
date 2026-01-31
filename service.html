@@ -20,12 +20,20 @@
   <a href="#main-content" class="skip-to-content">Skip to content</a>
   
   <!-- Header/Navigation -->
+     <!-- Header/Navigation -->
   <header class="header">
     <div class="container">
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand-link" aria-label="AMR Industrials Home">
-          <span class="brand-name">AMR Industrials</span>
-        </a>
+  <img
+    src="./assets/img/logo/logo.png"
+    alt="AMR Industrials"
+    class="brand-logo"
+    loading="eager"
+    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+  />
+  <span class="brand-name brand-fallback">AMR Industrials</span>
+</a>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="pillNav" aria-label="Toggle navigation">
           <span class="hamburger"></span>
@@ -47,17 +55,120 @@
     </div>
   </header>
 
+
   
   <!-- Main Content -->
   <main id="main-content">
     
     <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-title fade-in">Precision Engineering Solutions</h1>
-        <p class="page-subtitle fade-in">End-to-end manufacturing services—from raw material processing to micron-level finishing.</p>
+<section class="services-hero-video" id="services-hero">
+  <div class="video-container">
+    <video autoplay muted loop playsinline class="hero-video-bg" poster="./assets/img/about/1.png">
+      <source src="./assets/video/service.mp4" type="video/mp4">
+      <!-- Fallback -->
+      <div class="video-fallback" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);"></div>
+    </video>
+    
+    <!-- Technical Overlays -->
+    <div class="hero-overlay-radial"></div>
+    <div class="hud-grid-overlay"></div>
+    <div class="scan-line"></div>
+  </div>
+  
+  <div class="services-hero-content">
+    <div class="container">
+      <div class="hero-badge" data-animate="fade-down">
+        <span class="badge-pulse"></span>
+        <span class="badge-text">Manufacturing Excellence</span>
       </div>
-    </section>
+      
+      <h1 class="services-hero-title" data-animate="stagger-title">
+        <span class="title-line">Precision</span>
+        <span class="title-line highlight">Engineering</span>
+        <span class="title-line">Solutions</span>
+      </h1>
+      
+      <p class="services-hero-subtitle" data-animate="fade-up" data-delay="0.4">
+        End-to-end manufacturing services—from raw material processing to micron-level finishing.
+      </p>
+      
+      <div class="hero-tech-specs" data-animate="fade-up" data-delay="0.6">
+        <div class="spec-item">
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div class="spec-data">
+            <span class="spec-value" data-count="0.001">0</span>
+            <span class="spec-unit">mm</span>
+            <span class="spec-label">Tolerance</span>
+          </div>
+        </div>
+        
+        <div class="spec-divider"></div>
+        
+        <div class="spec-item">
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <path d="M6 10h.01M6 14h.01"/>
+            </svg>
+          </div>
+          <div class="spec-data">
+            <span class="spec-value" data-count="68">0</span>
+            <span class="spec-unit">+</span>
+            <span class="spec-label">Machines</span>
+          </div>
+        </div>
+        
+        <div class="spec-divider"></div>
+        
+        <div class="spec-item">
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+              <path d="M22 4L12 14.01l-3-3"/>
+            </svg>
+          </div>
+          <div class="spec-data">
+            <span class="spec-value" data-count="99.9">0</span>
+            <span class="spec-unit">%</span>
+            <span class="spec-label">Precision</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floating Technical Elements -->
+    <div class="floating-tech-elements" aria-hidden="true">
+      <div class="tech-gear gear-1" data-parallax-speed="0.03">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50" stroke-width="4"/>
+          <circle cx="50" cy="50" r="35" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="50" cy="50" r="15" fill="currentColor" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="tech-gear gear-2" data-parallax-speed="-0.05">
+        <svg viewBox="0 0 80 80" fill="none" stroke="currentColor">
+          <rect x="20" y="20" width="40" height="40" transform="rotate(45 40 40)" stroke-width="2"/>
+          <circle cx="40" cy="40" r="10" fill="currentColor" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="tech-crosshair crosshair-1"></div>
+      <div class="tech-crosshair crosshair-2"></div>
+      <div class="dimension-line line-1"></div>
+      <div class="dimension-line line-2"></div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="scroll-hint" data-animate="fade-up" data-delay="1">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll to explore capabilities</span>
+  </div>
+</section>
     
     <!-- Services Grid -->
     <section class="services-modern-section section">
@@ -238,7 +349,7 @@
               <span>Grinders</span>
             </div>
             <div class="stat-inline-item">
-              <strong>Ra 0.2μm</strong>
+              <strong>. 01mm tol</strong>
               <span>Finish</span>
             </div>
           </div>
@@ -277,7 +388,7 @@
             </li>
             <li>
               <span class="feature-bullet">◆</span>
-              <span>Phenetic Values components for technical demands</span>
+              <span>Pneumatic Values components for technical demands</span>
             </li>
           </ul>
           
@@ -328,127 +439,484 @@
 </section>
     
     <!-- Process Section -->
-    <section class="process-section section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Manufacturing Process</h2>
-          <p class="section-subtitle">Complete end-to-end control over the production lifecycle</p>
-        </div>
+   <section class="process-section-enhanced section" id="process">
+  <!-- Technical Background -->
+  <div class="process-bg-grid"></div>
+  <div class="process-bg-orb orb-1"></div>
+  <div class="process-bg-orb orb-2"></div>
+  
+  <div class="container">
+    <div class="section-header-enhanced" data-animate="fade-up">
+      <span class="section-tag">Manufacturing Pipeline</span>
+      <h2 class="section-title">Our Manufacturing Process</h2>
+      <p class="section-subtitle">Complete end-to-end control over the production lifecycle</p>
+    </div>
+    
+    <div class="process-pipeline-wrapper">
+      <!-- SVG Connection Line (Desktop) -->
+      <svg class="pipeline-svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="pipeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#E67E22;stop-opacity:0.2" />
+            <stop offset="50%" style="stop-color:#E67E22;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#D35400;stop-opacity:0.2" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- Background Track -->
+        <path class="pipe-track" d="M 100 150 L 900 150" stroke="#EFE9E3" stroke-width="4" fill="none"/>
+        <!-- Animated Progress Line -->
+        <path class="pipe-progress" d="M 100 150 L 900 150" stroke="url(#pipeGradient)" stroke-width="4" fill="none" stroke-dasharray="800" stroke-dashoffset="800" filter="url(#glow)"/>
+      </svg>
+
+      <div class="process-steps-enhanced">
         
-        <div class="process-steps">
-          <div class="process-step fade-in">
-            <div class="step-number">1</div>
-            <h3>Raw Material Processing</h3>
-            <p>Careful selection and preparation of materials to exact specifications.</p>
+        <!-- Step 1 -->
+        <article class="process-node" data-step="1" data-animate="fade-up" data-delay="0.1">
+          <div class="node-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot">1</div>
+            <div class="marker-pulse"></div>
           </div>
-          
-          <div class="process-step fade-in">
-            <div class="step-number">2</div>
-            <h3>Precision Machining</h3>
-            <p>CNC and conventional turning operations for complex geometries.</p>
+          <div class="process-card-enhanced">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-visual">
+                <div class="visual-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M24 4L4 14v20l20 10 20-10V14L24 4z"/>
+                    <path d="M4 14l20 10 20-10M24 44V24"/>
+                  </svg>
+                </div>
+                <div class="visual-badge">Input</div>
+              </div>
+              <div class="card-content-service">
+                <h3>Raw Material Processing</h3>
+                <p>Careful selection and preparation of materials to exact specifications with full traceability.</p>
+                <ul class="spec-list">
+                  <li><span>Material:</span> Certified Grade</li>
+                  <li><span>Trace:</span> 100% Tracked</li>
+                </ul>
+              </div>
+              <div class="card-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
           </div>
-          
-          <div class="process-step fade-in">
-            <div class="step-number">3</div>
-            <h3>Quality Control</h3>
-            <p>Rigorous inspection at every stage to ensure tolerances are met.</p>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="process-node" data-step="2" data-animate="fade-up" data-delay="0.2">
+          <div class="node-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot">2</div>
           </div>
-          
-          <div class="process-step fade-in">
-            <div class="step-number">4</div>
-            <h3>Finishing Operations</h3>
-            <p>Grinding, polishing, and surface treatments for final specifications.</p>
+          <div class="process-card-enhanced">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-visual blue">
+                <div class="visual-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="24" cy="24" r="12"/>
+                    <path d="M24 12v6l4 4"/>
+                    <path d="M12 24h6m12 0h6M24 36v6"/>
+                  </svg>
+                </div>
+                <div class="visual-badge">Machine</div>
+              </div>
+              <div class="card-content-service">
+                <h3>Precision Machining</h3>
+                <p>CNC and conventional turning operations for complex geometries within micron tolerances.</p>
+                <ul class="spec-list">
+                  <li><span>Tolerance:</span> ±0.001mm</li>
+                  <li><span>Capacity:</span> 60+ Units</li>
+                </ul>
+              </div>
+              <div class="card-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
           </div>
-          
-          <div class="process-step fade-in">
-            <div class="step-number">5</div>
-            <h3>Final Inspection</h3>
-            <p>Comprehensive quality checks before delivery to clients.</p>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="process-node" data-step="3" data-animate="fade-up" data-delay="0.3">
+          <div class="node-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot">3</div>
           </div>
-        </div>
+          <div class="process-card-enhanced">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-visual green">
+                <div class="visual-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M24 4v40M4 24h40"/>
+                    <circle cx="24" cy="24" r="8"/>
+                  </svg>
+                </div>
+                <div class="visual-badge">QC</div>
+              </div>
+              <div class="card-content-service">
+                <h3>Quality Control</h3>
+                <p>Rigorous inspection at every stage using CMM and advanced measurement tools.</p>
+                <ul class="spec-list">
+                  <li><span>Pass Rate:</span> 99.9%</li>
+                  <li><span>Method:</span> CMM + Manual</li>
+                </ul>
+              </div>
+              <div class="card-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="process-node" data-step="4" data-animate="fade-up" data-delay="0.4">
+          <div class="node-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot">4</div>
+          </div>
+          <div class="process-card-enhanced">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-visual purple">
+                <div class="visual-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 36l8-24 8 24M16 28h16"/>
+                    <circle cx="24" cy="36" r="4"/>
+                  </svg>
+                </div>
+                <div class="visual-badge">Finish</div>
+              </div>
+              <div class="card-content-service">
+                <h3>Finishing Operations</h3>
+                <p>Surface grinding, polishing, and heat treatment for final specifications.</p>
+                <ul class="spec-list">
+                  <li><span>Surface:</span> Ra 0.4</li>
+                  <li><span>Treatment:</span> Hardened</li>
+                </ul>
+              </div>
+              <div class="card-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 5 -->
+        <article class="process-node" data-step="5" data-animate="fade-up" data-delay="0.5">
+          <div class="node-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot complete">✓</div>
+            <div class="marker-pulse complete"></div>
+          </div>
+          <div class="process-card-enhanced final">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-visual orange">
+                <div class="visual-icon">
+                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M40 12L20 32l-8-8"/>
+                    <circle cx="24" cy="24" r="20"/>
+                  </svg>
+                </div>
+                <div class="visual-badge">Output</div>
+              </div>
+              <div class="card-content-service">
+                <div class="final-badge">Delivery Ready</div>
+                <h3>Final Inspection</h3>
+                <p>Comprehensive quality checks, certification, and secure packaging for delivery.</p>
+                <ul class="spec-list">
+                  <li><span>Cert:</span> ISO 9001</li>
+                  <li><span>Pack:</span> Export Grade</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     
     <!-- FAQ Section -->
-    <section class="faq-section section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Common questions about our services and capabilities</p>
+<section class="faq-enhanced-section section" id="faq">
+  <!-- Background Elements -->
+  <div class="faq-bg-pattern"></div>
+  <div class="faq-accent-line"></div>
+  
+  <div class="container">
+    <div class="faq-header-enhanced" data-animate="fade-up">
+      <div class="header-badge">Documentation</div>
+      <h2 class="section-title">Technical FAQ</h2>
+      <p class="section-subtitle">Common inquiries regarding our manufacturing capabilities, quality systems, and engineering processes</p>
+    </div>
+
+    <div class="faq-grid-enhanced">
+      
+      <!-- FAQ Item 1 -->
+      <article class="faq-card-enhanced" data-faq="1">
+        <div class="faq-number-wrap">
+          <span class="faq-number">01</span>
+          <div class="number-line"></div>
         </div>
-        
-        <div class="faq-container">
-          <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span>What industries do you serve?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>We specialize in manufacturing critical components for the Textile, Compressor, and Electrical industries. Our clients include global leaders like ELGI Equipments, Schneider Electric, and Simtech.</p>
+        <div class="faq-content-wrap">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+            <div class="trigger-header">
+              <span class="faq-category">Industries</span>
+              <h3>What industries do you serve?</h3>
+            </div>
+            <div class="trigger-icon">
+              <span class="icon-line"></span>
+              <span class="icon-line"></span>
+            </div>
+          </button>
+          <div class="faq-panel" id="faq-1" hidden>
+            <div class="panel-content">
+              <p>We specialize in manufacturing critical components for three primary sectors:</p>
+              <ul class="faq-spec-list">
+                <li><strong>Textile Industry:</strong> High-precision spares for textile machinery</li>
+                <li><strong>Compressor Manufacturing:</strong> Critical components for air compression systems</li>
+                <li><strong>Electrical Systems:</strong> Precision parts for electric panels and distribution systems</li>
+              </ul>
+              <div class="faq-client-tag">
+                <span>Trusted by:</span> ELGI Equipments, Schneider Electric, Simtech Industries
+              </div>
             </div>
           </div>
-          
-          <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span>What are your quality standards?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>"Quality Matters" is our core philosophy. Every component is machined to exact specifications with micron-level tolerances, ensuring seamless integration and uncompromising reliability in critical assemblies.</p>
+        </div>
+      </article>
+
+      <!-- FAQ Item 2 -->
+      <article class="faq-card-enhanced" data-faq="2">
+        <div class="faq-number-wrap">
+          <span class="faq-number">02</span>
+          <div class="number-line"></div>
+        </div>
+        <div class="faq-content-wrap">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+            <div class="trigger-header">
+              <span class="faq-category">Quality</span>
+              <h3>What are your quality standards?</h3>
+            </div>
+            <div class="trigger-icon">
+              <span class="icon-line"></span>
+              <span class="icon-line"></span>
+            </div>
+          </button>
+          <div class="faq-panel" id="faq-2" hidden>
+            <div class="panel-content">
+              <p>"Quality Matters" is our foundational principle. Our quality assurance system ensures:</p>
+              <ul class="faq-spec-list">
+                <li><strong>Micron-Level Tolerances:</strong> ±0.001mm precision on critical dimensions</li>
+                <li><strong>100% Traceability:</strong> Complete material and process documentation</li>
+                <li><strong>Multi-Stage Inspection:</strong> In-process checks at every manufacturing stage</li>
+                <li><strong>Final Verification:</strong> CMM and manual inspection before release</li>
+              </ul>
             </div>
           </div>
-          
-          <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span>What is your production capacity?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Our 7,000 sq. ft. facility houses over 60 specialized machines operated by 45-50 skilled professionals. This infrastructure allows us to execute multiple high-volume projects concurrently without bottlenecks.</p>
+        </div>
+      </article>
+
+      <!-- FAQ Item 3 -->
+      <article class="faq-card-enhanced" data-faq="3">
+        <div class="faq-number-wrap">
+          <span class="faq-number">03</span>
+          <div class="number-line"></div>
+        </div>
+        <div class="faq-content-wrap">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+            <div class="trigger-header">
+              <span class="faq-category">Capacity</span>
+              <h3>What is your production capacity?</h3>
+            </div>
+            <div class="trigger-icon">
+              <span class="icon-line"></span>
+              <span class="icon-line"></span>
+            </div>
+          </button>
+          <div class="faq-panel" id="faq-3" hidden>
+            <div class="panel-content">
+              <p>Our manufacturing infrastructure supports high-volume, concurrent production:</p>
+              <div class="faq-metrics">
+                <div class="metric-box">
+                  <span class="metric-val">7,000</span>
+                  <span class="metric-unit">sq.ft</span>
+                  <span class="metric-label">Facility</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">60+</span>
+                  <span class="metric-unit">units</span>
+                  <span class="metric-label">Machines</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">45-50</span>
+                  <span class="metric-unit">staff</span>
+                  <span class="metric-label">Operators</span>
+                </div>
+              </div>
+              <p class="mt-md">This infrastructure enables us to execute multiple high-volume projects concurrently without bottlenecks or capacity constraints.</p>
             </div>
           </div>
-          
-          <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span>Do you offer custom manufacturing?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Yes, we offer bespoke engineering services for unique mechanical challenges. We can manufacture components to exact client specifications, including custom Phenetic Values components tailored to your technical requirements.</p>
+        </div>
+      </article>
+
+      <!-- FAQ Item 4 -->
+      <article class="faq-card-enhanced" data-faq="4">
+        <div class="faq-number-wrap">
+          <span class="faq-number">04</span>
+          <div class="number-line"></div>
+        </div>
+        <div class="faq-content-wrap">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
+            <div class="trigger-header">
+              <span class="faq-category">Engineering</span>
+              <h3>Do you offer custom manufacturing?</h3>
+            </div>
+            <div class="trigger-icon">
+              <span class="icon-line"></span>
+              <span class="icon-line"></span>
+            </div>
+          </button>
+          <div class="faq-panel" id="faq-4" hidden>
+            <div class="panel-content">
+              <p>Yes, we provide <strong>bespoke engineering services</strong> for unique mechanical challenges:</p>
+              <ul class="faq-spec-list">
+                <li>Custom component design consultation</li>
+                <li>Prototype development and validation</li>
+                <li>Specialized phenolic valve components</li>
+                <li>Reverse engineering capabilities</li>
+                <li>Material selection optimization</li>
+              </ul>
+              <blockquote class="faq-quote">
+                "From concept to delivery, we engineer solutions tailored to your exact technical requirements."
+              </blockquote>
             </div>
           </div>
+        </div>
+      </article>
+
+      <!-- FAQ Item 5 -->
+      <article class="faq-card-enhanced" data-faq="5">
+        <div class="faq-number-wrap">
+          <span class="faq-number">05</span>
+          <div class="number-line"></div>
+        </div>
+        <div class="faq-content-wrap">
+          <button class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
+            <div class="trigger-header">
+              <span class="faq-category">Technology</span>
+              <h3>What makes your CNC capabilities unique?</h3>
+            </div>
+            <div class="trigger-icon">
+              <span class="icon-line"></span>
+              <span class="icon-line"></span>
+            </div>
+          </button>
+          <div class="faq-panel" id="faq-5" hidden>
+            <div class="panel-content">
+              <div class="featured-tech">
+                <div class="tech-badge">TSUGAMI</div>
+                <div class="tech-info">
+                  <h4>Japanese-Engineered CNC Lathes</h4>
+                  <p>Globally recognized for precision and reliability</p>
+                </div>
+              </div>
+              <ul class="faq-spec-list">
+                <li><strong>Micron Accuracy:</strong> Achievement of tolerances unreachable by conventional methods</li>
+                <li><strong>Superior Surface Finish:</strong> Ra values exceeding industry standards</li>
+                <li><strong>Complex Geometries:</strong> Multi-axis capability for intricate components</li>
+                <li><strong>Automation Ready:</strong> Bar feeder integration for unattended production</li>
+              </ul>
+              <div class="highlight-box">
+                <strong>Mission-Critical Assurance:</strong> Where failure is not an option, our CNC precision delivers absolute reliability.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+   <!-- Join Us CTA -->
+    <section id="join-us" class="cta-enhanced-section">
+      <div class="cta-parallax-bg">
+        <div class="parallax-layer layer-1" data-speed="0.3"></div>
+        <div class="parallax-layer layer-2" data-speed="0.5"></div>
+        <div class="parallax-layer layer-3" data-speed="0.7"></div>
+        <div class="parallax-layer layer-grid"></div>
+      </div>
+      
+      <div class="container">
+        <div class="cta-shell">
+          <div class="cta-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            Join Our Team
+          </div>
           
-          <div class="faq-item fade-in">
-            <button class="faq-question" aria-expanded="false">
-              <span>What makes your CNC capabilities unique?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>We utilize Japanese-engineered TSUGAMI CNC Lathes, recognized globally for their precision. These machines achieve micron-level tolerances and superior surface finishes for mission-critical components where failure is not an option.</p>
+          <h2 class="cta-title">Craft Your Future<br>With Us</h2>
+          <p class="cta-subtitle">We're always looking for talented machinists, programmers, and engineers who share our passion for precision. Join a team where your skills are valued and your growth is guaranteed.</p>
+          
+          <ul class="cta-highlights">
+            <li>Competitive compensation and benefits</li>
+            <li>State-of-the-art facility with 60+ machines</li>
+            <li>Continuous learning and certification programs</li>
+            <li>Work with global brands like ELGI and Schneider</li>
+          </ul>
+          
+          <div class="cta-actions">
+            <a href="contact-us.html" class="btn btn-primary btn-cta">View Open Positions</a>
+            <a href="mailto:careers@amrindustrials.com" class="btn btn-secondary btn-cta btn-cta-outline">Send Resume</a>
+          </div>
+          
+          <div class="cta-trust">
+            <div class="trust-item">
+              <span class="trust-num">45-50</span>
+              <span class="trust-label">Current Team</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num">34+</span>
+              <span class="trust-label">Years Legacy</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num">100%</span>
+              <span class="trust-label">Employee Focused</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section section">
-      <div class="container">
-        <div class="cta-content fade-in">
-          <h2>Ready to Partner With Us?</h2>
-          <p>Discover how our precision engineering solutions can enhance your supply chain and operational success.</p>
-          <a href="../contact-us/contact-us.html" class="btn btn-primary btn-lg">Contact Our Team</a>
-        </div>
+      
+      <div class="cta-particles">
+        <span class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></span>
+        <span class="particle" style="left: 20%; top: 60%; animation-delay: 2s;"></span>
+        <span class="particle" style="left: 70%; top: 30%; animation-delay: 4s;"></span>
+        <span class="particle" style="left: 80%; top: 70%; animation-delay: 6s;"></span>
+        <span class="particle" style="left: 50%; top: 50%; animation-delay: 8s;"></span>
       </div>
     </section>
     

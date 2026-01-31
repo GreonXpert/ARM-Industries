@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -23,12 +23,20 @@
   <a href="#main-content" class="skip-to-content">Skip to content</a>
   
   <!-- Header/Navigation -->
+   <!-- Header/Navigation -->
   <header class="header">
     <div class="container">
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand-link" aria-label="AMR Industrials Home">
-          <span class="brand-name">AMR Industrials</span>
-        </a>
+  <img
+    src="./assets/img/logo/logo.png"
+    alt="AMR Industrials"
+    class="brand-logo"
+    loading="eager"
+    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+  />
+  <span class="brand-name brand-fallback">AMR Industrials</span>
+</a>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="pillNav" aria-label="Toggle navigation">
           <span class="hamburger"></span>
@@ -50,186 +58,563 @@
     </div>
   </header>
 
-  
+
   <!-- Main Content -->
   <main id="main-content">
     
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-title fade-in">Precision in Every Hand</h1>
-        <p class="page-subtitle fade-in">Our workforce of 45–50 skilled professionals is the backbone of our manufacturing excellence.</p>
+    <!-- Hero Video Section -->
+    <section class="page-hero-video">
+      <div class="video-container">
+        <!-- Replace with your actual video: ../assets/videos/team-hero.mp4 -->
+        <video class="hero-video" autoplay muted loop playsinline poster="./assets/img/about/1.png">
+          <source src="./assets/video/about.mp4" type="video/mp4">
+          <img src="./assets/img/about/1.png" alt="AMR Industrials manufacturing team at work">
+        </video>
+      </div>
+      <div class="video-overlay"></div>
+      
+      <div class="industrial-accents">
+        <div class="accent-line line-1"></div>
+        <div class="accent-line line-2"></div>
+        <div class="accent-box"></div>
+      </div>
+      
+      <div class="hero-content-wrapper container">
+        <div class="hero-split-text">
+          <div class="hero-text-left">
+            <span class="hero-label">Our People</span>
+            <h1 class="hero-title-video">The Craftsman<br>Collective</h1>
+            <div class="hero-line"></div>
+          </div>
+          <div class="hero-text-right">
+            <span class="hero-label">Excellence</span>
+            <h1 class="hero-title-video secondary">Since 1990</h1>
+            <div class="hero-line right"></div>
+          </div>
+        </div>
+        
+        <div class="hero-subtitle-wrapper">
+          <p class="hero-subtitle-video">45-50 Skilled Professionals</p>
+          <p class="hero-description">Where precision meets passion. Our workforce isn't just building components; they're engineering the future of manufacturing.</p>
+          <div class="hero-cta-group">
+            <a href="#leadership" class="btn btn-primary">Meet Our Leadership</a>
+            <a href="#join-us" class="btn btn-outline-light">Join Our Team</a>
+          </div>
+        </div>
       </div>
     </section>
-    
-    <!-- Leadership Section -->
-    <section class="leadership-section section">
+
+    <!-- Team Stats Metrics -->
+    <section class="metrics-section" aria-labelledby="team-stats-heading">
+      <div class="metrics-bg-decoration">
+        <div class="deco-circle deco-1"></div>
+        <div class="deco-circle deco-2"></div>
+        <div class="deco-circle deco-3"></div>
+      </div>
+      
       <div class="container">
-        <div class="leadership-content">
-          <div class="leadership-text slide-in-left">
-            <h2>Leadership Rooted in the Shop Floor</h2>
-            <p class="lead-text">Our leadership doesn't just manage production; they understand the engineering behind every cut.</p>
-            
-            <div class="leader-card">
-              <svg class="leader-icon" viewBox="0 0 100 100">
-                <circle cx="50" cy="35" r="20" fill="var(--color-accent)" opacity="0.3"/>
-                <path d="M25 80 Q25 55 50 55 Q75 55 75 80 Z" fill="var(--color-accent)"/>
+        <div class="metrics-header section-header">
+          <h2 id="team-stats-heading" class="section-title">By The Numbers</h2>
+          <p class="section-subtitle">The measurable impact of our human capital</p>
+        </div>
+        
+        <div class="metrics-grid" role="list">
+          <!-- Metric 1: Team Size -->
+          <div class="metric-item" data-metric="1" role="listitem">
+            <div class="metric-circle-container">
+              <svg class="progress-ring" viewBox="0 0 200 200">
+                <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85"></circle>
+                <circle class="progress-ring-circle" cx="100" cy="100" r="85" data-progress="85" style="stroke: #E67E22;"></circle>
               </svg>
-              <div class="leader-info">
-                <h3>M. Mansoor Rahiman</h3>
-                <p class="leader-role">Managing Director & Founder</p>
-                <p class="leader-bio">Mr. Rahiman began his career as a shop-floor helper in lathe operations, mastering the intricacies of machining before advancing to a skilled operator. Driven by a passion for precision, he founded the company in 1990 with just two lathe machines, growing it into the premier manufacturing unit it is today.</p>
+              <div class="metric-center">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="metric-number" data-target="45" data-suffix="+">0</div>
+                <div class="metric-label">Team Members</div>
               </div>
             </div>
-            
-            <div class="leadership-qualities">
-              <div class="quality-item">
-                <h4>Hands-on Mastery</h4>
-                <p>Deep technical expertise from shop-floor experience</p>
-              </div>
-              <div class="quality-item">
-                <h4>Technical Stewardship</h4>
-                <p>Decades of experience ensure guidance based on technical depth</p>
-              </div>
-              <div class="quality-item">
-                <h4>Visionary Growth</h4>
-                <p>Built the team from a small setup into a premier manufacturing organization</p>
-              </div>
-            </div>
+            <div class="metric-shadow"></div>
           </div>
-          
-          <div class="leadership-visual slide-in-right">
-            <svg viewBox="0 0 400 400" class="leadership-illustration">
-              <rect x="100" y="150" width="200" height="200" rx="10" fill="var(--color-tertiary)" opacity="0.2"/>
-              <circle cx="200" cy="200" r="80" fill="var(--color-accent)" opacity="0.3"/>
-              <path d="M140 280 Q140 220 200 220 Q260 220 260 280 Z" fill="var(--color-accent)"/>
-              <circle cx="200" cy="180" r="35" fill="var(--color-accent)"/>
-              <rect x="160" y="100" width="80" height="40" rx="5" fill="var(--color-text)" opacity="0.4"/>
-              <circle cx="180" cy="120" r="8" fill="var(--color-accent)"/>
-              <circle cx="220" cy="120" r="8" fill="var(--color-accent)"/>
-            </svg>
+
+          <!-- Metric 2: Experience -->
+          <div class="metric-item" data-metric="2" role="listitem">
+            <div class="metric-circle-container">
+              <svg class="progress-ring" viewBox="0 0 200 200">
+                <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85"></circle>
+                <circle class="progress-ring-circle" cx="100" cy="100" r="85" data-progress="92" style="stroke: #3498DB;"></circle>
+              </svg>
+              <div class="metric-center">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="metric-number" data-target="34" data-suffix="">0</div>
+                <div class="metric-label">Years Experience</div>
+              </div>
+            </div>
+            <div class="metric-shadow"></div>
+          </div>
+
+          <!-- Metric 3: Quality -->
+          <div class="metric-item" data-metric="3" role="listitem">
+            <div class="metric-circle-container">
+              <svg class="progress-ring" viewBox="0 0 200 200">
+                <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85"></circle>
+                <circle class="progress-ring-circle" cx="100" cy="100" r="85" data-progress="78" style="stroke: #27AE60;"></circle>
+              </svg>
+              <div class="metric-center">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div class="metric-number" data-target="99" data-suffix="%">0</div>
+                <div class="metric-label">Quality Pass Rate</div>
+              </div>
+            </div>
+            <div class="metric-shadow"></div>
+          </div>
+
+          <!-- Metric 4: Machines -->
+          <div class="metric-item" data-metric="4" role="listitem">
+            <div class="metric-circle-container">
+              <svg class="progress-ring" viewBox="0 0 200 200">
+                <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85"></circle>
+                <circle class="progress-ring-circle" cx="100" cy="100" r="85" data-progress="65" style="stroke: #9B59B6;"></circle>
+              </svg>
+              <div class="metric-center">
+                <div class="metric-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div class="metric-number" data-target="60" data-suffix="+">0</div>
+                <div class="metric-label">Machines Operated</div>
+              </div>
+            </div>
+            <div class="metric-shadow"></div>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Team Highlights Swiper -->
-    <section class="highlights-section section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Our Team Stands Out</h2>
-          <p class="section-subtitle">Defining "Quality Matters" through the expertise of our people</p>
-        </div>
-        
-        <div class="swiper highlights-swiper">
-          <div class="swiper-wrapper">
-            
-            <div class="swiper-slide">
-              <div class="highlight-card">
-                <svg class="highlight-icon" viewBox="0 0 64 64">
-                  <circle cx="32" cy="32" r="24" fill="var(--color-accent)" opacity="0.2"/>
-                  <path d="M32 14 L38 26 L51 28 L41 37 L44 50 L32 43 L20 50 L23 37 L13 28 L26 26 Z" fill="var(--color-accent)"/>
-                </svg>
-                <h3>Micron-Level Accuracy</h3>
-                <p>Our operators are trained to manage high-precision Japanese TSUGAMI CNC lathes for ultra-critical components where failure is not an option.</p>
-              </div>
-            </div>
-            
-            <div class="swiper-slide">
-              <div class="highlight-card">
-                <svg class="highlight-icon" viewBox="0 0 64 64">
-                  <rect x="12" y="12" width="40" height="40" rx="4" fill="var(--color-accent)" opacity="0.2"/>
-                  <rect x="18" y="18" width="12" height="12" fill="var(--color-accent)"/>
-                  <rect x="34" y="18" width="12" height="12" fill="var(--color-accent)"/>
-                  <rect x="18" y="34" width="12" height="12" fill="var(--color-accent)"/>
-                  <rect x="34" y="34" width="12" height="12" fill="var(--color-accent)"/>
-                </svg>
-                <h3>Versatile Technical Depth</h3>
-                <p>With a fleet of over 60 specialized machines, our professionals possess the technical mastery to handle diverse materials and complex geometries concurrently.</p>
-              </div>
-            </div>
-            
-            <div class="swiper-slide">
-              <div class="highlight-card">
-                <svg class="highlight-icon" viewBox="0 0 64 64">
-                  <circle cx="32" cy="32" r="24" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
-                  <polyline points="32 16 32 32 44 32" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
-                </svg>
-                <h3>Disciplined Excellence</h3>
-                <p>We adhere to rigorous production methodologies and proven processes to ensure predictable, on-time delivery for our global partners.</p>
-              </div>
-            </div>
-            
-          </div>
-          
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership-section section mission-enhanced">
+      <div class="blueprint-grid">
+        <div class="grid-lines"></div>
+        <div class="grid-crosshair crosshair-1"></div>
+        <div class="grid-crosshair crosshair-2"></div>
       </div>
-    </section>
-    
-    <!-- Team Values -->
-    <section class="values-section section">
+      
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How We Nurture Our Talent</h2>
-          <p class="section-subtitle">We handle our team with the same precision and care we apply to our components</p>
+        <div class="section-header-enhanced">
+          <span class="section-tags">Leadership</span>
+          <h2 class="section-title">Vision from the Shop Floor</h2>
+          <p class="section-subtitle">Leadership rooted in technical mastery and hands-on experience</p>
         </div>
-        
-        <div class="values-grid">
-          <div class="value-card fade-in">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <rect x="12" y="20" width="40" height="30" rx="2" fill="var(--color-accent)" opacity="0.2"/>
-              <rect x="16" y="24" width="32" height="22" fill="var(--color-accent)" opacity="0.4"/>
-              <line x1="32" y1="14" x2="32" y2="20" stroke="var(--color-accent)" stroke-width="3"/>
-              <circle cx="32" cy="12" r="3" fill="var(--color-accent)"/>
-            </svg>
-            <h3>Skill Development</h3>
-            <p>Dedicated focus on skill development and technical mastery to ensure our workforce remains a "Premier Manufacturing" team.</p>
+
+        <div class="mission-grid">
+          <!-- Visual Side -->
+          <div class="mission-visual">
+            <div class="visual-container">
+              <div class="year-badge" data-count="1990">
+                <span class="year-number">0</span>
+                <span class="year-label">Founded</span>
+              </div>
+              
+              <div class="precision-indicator">
+                <div class="indicator-line">
+                  <div class="indicator-pulse"></div>
+                </div>
+                <span class="precision-label">PRECISION</span>
+              </div>
+
+              <!-- 3D Leadership Image -->
+              <div class="mission-icon-3d" style="width: 300px; height: 300px;">
+                <div class="icon-glow"></div>
+                <div class="image-3d-container">
+                  <!-- Replace with: ../assets/images/leader-mansoor.jpg -->
+                  <img src="../assets/images/leader-mansoor.jpg" 
+                       alt="M. Mansoor Rahiman - Managing Director" 
+                       class="mission-image-3d"
+                       onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop'">
+                </div>
+              </div>
+
+              <div class="corner-bracket bracket-tl"></div>
+              <div class="corner-bracket bracket-br"></div>
+            </div>
           </div>
-          
-          <div class="value-card fade-in">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <path d="M32 10 L40 22 L54 24 L43 34 L46 48 L32 41 L18 48 L21 34 L10 24 L24 22 Z" fill="var(--color-accent)" opacity="0.3"/>
-              <circle cx="32" cy="32" r="12" fill="var(--color-accent)"/>
-            </svg>
-            <h3>Continuous Investment</h3>
-            <p>We continuously invest in our workforce's skills to stay ahead of industrial trends, providing state-of-the-art manufacturing solutions.</p>
-          </div>
-          
-          <div class="value-card fade-in">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <polygon points="32,10 44,28 60,30 46,42 50,58 32,48 14,58 18,42 4,30 20,28" fill="var(--color-accent)" opacity="0.2"/>
-              <circle cx="32" cy="32" r="16" fill="var(--color-accent)" opacity="0.4"/>
-              <path d="M24 32 L30 38 L42 26" stroke="var(--color-white)" stroke-width="3" fill="none"/>
-            </svg>
-            <h3>Culture of Improvement</h3>
-            <p>Our corporate DNA is built on "Continuous Improvement," encouraging professionals to constantly refine their techniques.</p>
-          </div>
-          
-          <div class="value-card fade-in">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <rect x="16" y="16" width="32" height="32" fill="var(--color-accent)" opacity="0.2"/>
-              <rect x="20" y="20" width="24" height="24" fill="var(--color-accent)" opacity="0.4"/>
-              <line x1="28" y1="32" x2="36" y2="32" stroke="var(--color-white)" stroke-width="2"/>
-              <line x1="32" y1="28" x2="32" y2="36" stroke="var(--color-white)" stroke-width="2"/>
-            </svg>
-            <h3>Technical Discipline</h3>
-            <p>Every team member is trained in disciplined production methodologies that de-risk the supply chain for our global clients.</p>
+
+          <!-- Content Side -->
+          <div class="mission-content-enhanced">
+            <div class="section-tag-enhanced">
+              <span class="tag-line"></span>
+              <span class="tag-text">Managing Director</span>
+            </div>
+
+            <h2 class="mission-title">
+              <span class="title-row">M. Mansoor</span>
+              <span class="title-row highlight">Rahiman</span>
+              <span class="title-outline">Founder & Technical Lead</span>
+            </h2>
+
+            <div class="mission-body">
+              <p class="lead-text typewriter-text">From shop-floor helper to precision engineering pioneer.</p>
+              <p class="body-text">Mr. Rahiman began his career mastering lathe operations before founding AMR Industrials in 1990 with just two machines. Today, his hands-on approach and technical stewardship guide a team of 45+ elite craftsmen, ensuring every component meets the highest standards of precision.</p>
+            </div>
+
+            <div class="mission-principle-card">
+              <div class="principle-content">
+                <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+                <blockquote>"True precision isn't manufactured—it's cultivated through decades of disciplined craftsmanship and continuous improvement."</blockquote>
+              </div>
+              <div class="principle-accent"></div>
+            </div>
+
+            <div class="mission-stats-row">
+              <div class="mini-stat">
+                <span class="stat-value" data-count="34">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="mini-stat-divider"></div>
+              <div class="mini-stat">
+                <span class="stat-value" data-count="1990">0</span>
+                <span class="stat-label">Founded</span>
+              </div>
+              <div class="mini-stat-divider"></div>
+              <div class="mini-stat">
+                <span class="stat-value" data-count="100">0</span><span class="stat-unit">%</span>
+                <span class="stat-label">Hands-on</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Trust Section -->
-    <section class="trust-section section">
+
+    <!-- Team Showcase - Accordion Style -->
+    <section class="team-showcase-section">
       <div class="container">
-        <div class="trust-content fade-in">
-          <h2>Building Global Trust</h2>
-          <p class="trust-text">The success of our team is validated by the long-standing associations we maintain with global engineering leaders like <strong>ELGI</strong> and <strong>Schneider Electric</strong>.</p>
-          <p class="trust-quote">"When you partner with us, you are not just hiring a factory; you are partnering with a team of elite craftsmen who treat your engineering challenges as their own."</p>
+        <div class="team-showcase-header">
+          <h2>Expertise Across Disciplines</h2>
+          <p class="lead-text">Our 45-50 professionals represent the full spectrum of precision manufacturing expertise</p>
         </div>
+
+        <div class="team-accordion" role="tablist">
+          <!-- Card 1: CNC Specialists -->
+          <div class="team-card active" role="tab" tabindex="0" aria-expanded="true">
+            <div class="card-glass">
+              <div class="card-header">
+                <div class="header-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <span class="card-number">01</span>
+                <h3>CNC Specialists</h3>
+              </div>
+              
+              <div class="card-content">
+                <div class="content-inner">
+                  <div class="content-glow"></div>
+                  <h4>CNC Programming & Operation</h4>
+                  <p>Elite operators trained on Japanese TSUGAMI CNC lathes, managing ultra-critical components with micron-level accuracy where failure is not an option.</p>
+                  <div class="stat-indicator">
+                    <span class="stat-value">15+</span>
+                    <span class="stat-label">CNC Experts</span>
+                  </div>
+                  <a href="service.html#cnc" class="card-link">Explore CNC Services →</a>
+                </div>
+              </div>
+              <div class="card-shine"></div>
+            </div>
+          </div>
+
+          <!-- Card 2: Conventional Turning -->
+          <div class="team-card" role="tab" tabindex="0" aria-expanded="false">
+            <div class="card-glass">
+              <div class="card-header">
+                <div class="header-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+                  </svg>
+                </div>
+                <span class="card-number">02</span>
+                <h3>Turning Experts</h3>
+              </div>
+              
+              <div class="card-content">
+                <div class="content-inner">
+                  <div class="content-glow"></div>
+                  <h4>Conventional & Hybrid Turning</h4>
+                  <p>Masters of conventional lathes who bring decades of tactile expertise to every component, handling diverse materials and complex geometries with ease.</p>
+                  <div class="stat-indicator">
+                    <span class="stat-value">20+</span>
+                    <span class="stat-label">Turning Experts</span>
+                  </div>
+                  <a href="service.html#turning" class="card-link">View Turning Capabilities →</a>
+                </div>
+              </div>
+              <div class="card-shine"></div>
+            </div>
+          </div>
+
+          <!-- Card 3: Grinding Specialists -->
+          <div class="team-card" role="tab" tabindex="0" aria-expanded="false">
+            <div class="card-glass">
+              <div class="card-header">
+                <div class="header-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <span class="card-number">03</span>
+                <h3>Grinding Masters</h3>
+              </div>
+              
+              <div class="card-content">
+                <div class="content-inner">
+                  <div class="content-glow"></div>
+                  <h4>Precision Surface Grinding</h4>
+                  <p>Specialists in achieving flawless surface finishes and exact dimensional tolerances through meticulous grinding operations on critical components.</p>
+                  <div class="stat-indicator">
+                    <span class="stat-value">8+</span>
+                    <span class="stat-label">Grinding Experts</span>
+                  </div>
+                  <a href="service.html#grinding" class="card-link">See Grinding Services →</a>
+                </div>
+              </div>
+              <div class="card-shine"></div>
+            </div>
+          </div>
+
+          <!-- Card 4: Quality & Engineering -->
+          <div class="team-card" role="tab" tabindex="0" aria-expanded="false">
+            <div class="card-glass">
+              <div class="card-header">
+                <div class="header-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 12l2 2 4-4"></path>
+                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                  </svg>
+                </div>
+                <span class="card-number">04</span>
+                <h3>Quality Control</h3>
+              </div>
+              
+              <div class="card-content">
+                <div class="content-inner">
+                  <div class="content-glow"></div>
+                  <h4>Inspection & Quality Assurance</h4>
+                  <p>Meticulous inspectors ensuring every component meets rigorous international standards before leaving our facility. The final guardians of precision.</p>
+                  <div class="stat-indicator">
+                    <span class="stat-value">5+</span>
+                    <span class="stat-label">QC Specialists</span>
+                  </div>
+                  <a href="service.html#quality" class="card-link">Quality Standards →</a>
+                </div>
+              </div>
+              <div class="card-shine"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-showcase-cta">
+          <a href="contact.html" class="btn">
+            Work With Our Team
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-enhanced section">
+      <div class="values-bg-decoration">
+        <div class="values-orb orb-1"></div>
+        <div class="values-orb orb-2"></div>
+        <div class="values-orb orb-3"></div>
+        <div class="values-grid-pattern"></div>
+      </div>
+      
+      <div class="container">
+        <div class="section-header-enhanced">
+          <span class="section-tags">Culture</span>
+          <h2 class="section-title">How We Nurture Talent</h2>
+          <p class="section-subtitle">Building excellence through continuous investment in our people</p>
+          <div class="header-line">
+            <span class="line-accent"></span>
+            <span class="line-dot"></span>
+            <span class="line-accent"></span>
+          </div>
+        </div>
+
+        <div class="values-grid-enhanced">
+          <!-- Value 1 -->
+          <div class="value-card-enhanced" data-value="precision">
+            <div class="card-border"></div>
+            <div class="card-glow"></div>
+            <div class="value-icon-wrapper">
+              <div class="icon-bg">
+                <svg class="value-icon-enhanced" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="32" cy="32" r="24"></circle>
+                  <circle cx="32" cy="32" r="8"></circle>
+                  <line x1="32" y1="8" x2="32" y2="24"></line>
+                  <line x1="32" y1="40" x2="32" y2="56"></line>
+                </svg>
+                <div class="icon-float-element float-1"></div>
+                <div class="icon-float-element float-2"></div>
+              </div>
+            </div>
+            <div class="value-card-content">
+              <span class="value-number">01</span>
+              <h3 class="value-title">Skill Development</h3>
+              <p class="value-description">Dedicated focus on technical mastery through continuous training programs, ensuring our workforce remains a premier manufacturing team.</p>
+              <div class="value-features">
+                <span class="feature-tag">Hands-on Training</span>
+                <span class="feature-tag">Cross-skilling</span>
+                <span class="feature-tag">Mentorship</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="value-card-enhanced" data-value="discipline">
+            <div class="card-border"></div>
+            <div class="card-glow"></div>
+            <div class="value-icon-wrapper">
+              <div class="icon-bg">
+                <svg class="value-icon-enhanced" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M32 8L40 20H56L44 32L48 48L32 38L16 48L20 32L8 20H24L32 8Z"></path>
+                </svg>
+                <div class="icon-float-element float-1"></div>
+                <div class="icon-float-element float-2"></div>
+              </div>
+            </div>
+            <div class="value-card-content">
+              <span class="value-number">02</span>
+              <h3 class="value-title">Continuous Investment</h3>
+              <p class="value-description">We invest in cutting-edge equipment and training to keep our team ahead of industrial trends and technological advances.</p>
+              <div class="value-features">
+                <span class="feature-tag">Technology</span>
+                <span class="feature-tag">Education</span>
+                <span class="feature-tag">Growth</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="value-card-enhanced" data-value="improvement">
+            <div class="card-border"></div>
+            <div class="card-glow"></div>
+            <div class="value-icon-wrapper">
+              <div class="icon-bg">
+                <svg class="value-icon-enhanced" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 32 24 40 48 16"></polyline>
+                  <path d="M56 32c0 13.255-10.745 24-24 24S8 45.255 8 32 18.745 8 32 8"></path>
+                </svg>
+                <div class="icon-float-element float-1"></div>
+                <div class="icon-float-element float-2"></div>
+              </div>
+            </div>
+            <div class="value-card-content">
+              <span class="value-number">03</span>
+              <h3 class="value-title">Culture of Improvement</h3>
+              <p class="value-description">Our corporate DNA is built on Kaizen principles—encouraging every professional to constantly refine techniques and processes.</p>
+              <div class="value-features">
+                <span class="feature-tag">Kaizen</span>
+                <span class="feature-tag">Innovation</span>
+                <span class="feature-tag">Excellence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Section with Parallax -->
+
+    <!-- Join Us CTA -->
+    <section id="join-us" class="cta-enhanced-section">
+      <div class="cta-parallax-bg">
+        <div class="parallax-layer layer-1" data-speed="0.3"></div>
+        <div class="parallax-layer layer-2" data-speed="0.5"></div>
+        <div class="parallax-layer layer-3" data-speed="0.7"></div>
+        <div class="parallax-layer layer-grid"></div>
+      </div>
+      
+      <div class="container">
+        <div class="cta-shell">
+          <div class="cta-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            Join Our Team
+          </div>
+          
+          <h2 class="cta-title">Craft Your Future<br>With Us</h2>
+          <p class="cta-subtitle">We're always looking for talented machinists, programmers, and engineers who share our passion for precision. Join a team where your skills are valued and your growth is guaranteed.</p>
+          
+          <ul class="cta-highlights">
+            <li>Competitive compensation and benefits</li>
+            <li>State-of-the-art facility with 60+ machines</li>
+            <li>Continuous learning and certification programs</li>
+            <li>Work with global brands like ELGI and Schneider</li>
+          </ul>
+          
+          <div class="cta-actions">
+            <a href="contact-us.html" class="btn btn-primary btn-cta">View Open Positions</a>
+            <a href="mailto:careers@amrindustrials.com" class="btn btn-secondary btn-cta btn-cta-outline">Send Resume</a>
+          </div>
+          
+          <div class="cta-trust">
+            <div class="trust-item">
+              <span class="trust-num">45-50</span>
+              <span class="trust-label">Current Team</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num">34+</span>
+              <span class="trust-label">Years Legacy</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num">100%</span>
+              <span class="trust-label">Employee Focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-particles">
+        <span class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></span>
+        <span class="particle" style="left: 20%; top: 60%; animation-delay: 2s;"></span>
+        <span class="particle" style="left: 70%; top: 30%; animation-delay: 4s;"></span>
+        <span class="particle" style="left: 80%; top: 70%; animation-delay: 6s;"></span>
+        <span class="particle" style="left: 50%; top: 50%; animation-delay: 8s;"></span>
       </div>
     </section>
     
@@ -247,21 +632,21 @@
         <div class="footer-col">
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="../navbar/navbar.html">Home</a></li>
-            <li><a href="../about/about.html">About Us</a></li>
-            <li><a href="../service/service.html">Services</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="../contact-us/contact-us.html">Contact</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-col">
           <h4 class="footer-heading">Services</h4>
           <ul class="footer-links">
-            <li><a href="../service/service.html#cnc">CNC Machining</a></li>
-            <li><a href="../service/service.html#turning">Conventional Turning</a></li>
-            <li><a href="../service/service.html#grinding">Precision Grinding</a></li>
-            <li><a href="../service/service.html#custom">Custom Engineering</a></li>
+            <li><a href="service.html#cnc">CNC Machining</a></li>
+            <li><a href="service.html#turning">Conventional Turning</a></li>
+            <li><a href="service.html#grinding">Precision Grinding</a></li>
+            <li><a href="service.html#custom">Custom Engineering</a></li>
           </ul>
         </div>
         
@@ -295,7 +680,6 @@
   
   <!-- Scripts -->
   <script src="../shared/js/common.js"></script>
-  <script src="js/team.js"></script>
   
 </body>
 </html>

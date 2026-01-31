@@ -20,13 +20,20 @@
   <a href="#main-content" class="skip-to-content">Skip to content</a>
   
 
-  <!-- Header/Navigation -->
+   <!-- Header/Navigation -->
   <header class="header">
     <div class="container">
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand-link" aria-label="AMR Industrials Home">
-          <span class="brand-name">AMR Industrials</span>
-        </a>
+  <img
+    src="./assets/img/logo/logo.png"
+    alt="AMR Industrials"
+    class="brand-logo"
+    loading="eager"
+    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+  />
+  <span class="brand-name brand-fallback">AMR Industrials</span>
+</a>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="pillNav" aria-label="Toggle navigation">
           <span class="hamburger"></span>
@@ -48,133 +55,474 @@
     </div>
   </header>
 
+
   <!-- Main Content -->
   <main id="main-content">
     
     <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-title fade-in">Four Decades of Manufacturing Excellence</h1>
-        <p class="page-subtitle fade-in">A rich heritage of precision, discipline, and continuous improvement since 1990.</p>
+    <!-- Page Hero with Video Background -->
+<section class="page-hero-video">
+  <div class="video-container">
+    <video autoplay muted loop playsinline class="hero-video" poster="assets/images/about-poster.jpg">
+      <source src="assets/video/team.mp4" type="video/mp4">
+      <!-- Fallback for browsers that don't support video -->
+      <div class="video-fallback" style="background-image: url('assets/images/about-fallback.jpg');"></div>
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+  
+  <div class="hero-content-wrapper">
+    <div class="container">
+      <div class="hero-split-text">
+        <div class="hero-text-left fade-in">
+          <span class="hero-label">Our Standard</span>
+          <h1 class="hero-title-video">PRECISION</h1>
+          <div class="hero-line"></div>
+        </div>
+        
+        <div class="hero-text-right fade-in">
+          <span class="hero-label">Our Promise</span>
+          <h1 class="hero-title-video secondary">QUALITY<br>MATTERS</h1>
+          <div class="hero-line right"></div>
+        </div>
       </div>
-    </section>
+      
+      <div class="hero-subtitle-wrapper fade-in">
+        <p class="hero-subtitle-video">Four Decades of Manufacturing Excellence</p>
+        <p class="hero-description">A rich heritage of precision engineering, discipline, and continuous improvement since 1990.</p>
+        <div class="hero-cta-group">
+          <a href="#mission" class="btn btn-primary">Explore Our Story</a>
+          <a href="service.html" class="btn btn-outline-light">Our Capabilities</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Industrial Accent Elements -->
+  <div class="industrial-accents">
+    <div class="accent-line line-1"></div>
+    <div class="accent-line line-2"></div>
+    <div class="accent-box"></div>
+  </div>
+</section>
     
     <!-- Mission Statement -->
-    <section class="mission-section section">
-      <div class="container">
-        <div class="mission-content slide-in-left">
-          <h2>Our Mission</h2>
-          <p class="mission-text">AMR Industrials is a premier manufacturing organization built on a technical legacy started in 1990 and formally established as a corporate entity in 1994. We function as a strategic supplier, committed to delivering high-tolerance components that meet the most rigorous international standards.</p>
-          <div class="mission-highlight">
-            <svg class="mission-icon" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="40" fill="var(--color-accent)" opacity="0.2"/>
-              <path d="M50 20 L60 40 L82 43 L66 58 L70 80 L50 69 L30 80 L34 58 L18 43 L40 40 Z" fill="var(--color-accent)"/>
+<!-- Mission Statement - Industrial Blueprint Edition -->
+<section class="mission-enhanced section" id="mission">
+  <!-- Technical Grid Background -->
+  <div class="blueprint-grid">
+    <div class="grid-lines"></div>
+    <div class="grid-crosshair crosshair-1"></div>
+    <div class="grid-crosshair crosshair-2"></div>
+    <div class="measurement-markings"></div>
+  </div>
+  
+  <!-- Floating Industrial Elements -->
+  <div class="floating-geometry">
+    <div class="float-gear gear-1"></div>
+    <div class="float-gear gear-2"></div>
+    <div class="precision-circle"></div>
+    <div class="tech-square"></div>
+  </div>
+  
+  <div class="container">
+    <div class="mission-grid">
+      <!-- Left Visual Column -->
+      <div class="mission-visual slide-in-left">
+        <div class="visual-container">
+          <div class="year-badge">
+            <span class="year-number" data-count="1990">0</span>
+            <span class="year-label">Established</span>
+          </div>
+          
+          <div class="precision-indicator">
+            <div class="indicator-line"></div>
+            <div class="indicator-pulse"></div>
+            <span class="precision-label">±0.01mm</span>
+          </div>
+          
+          <div class="mission-icon-3d">
+  <div class="icon-glow"></div>
+  <div class="image-3d-container">
+    <img src="./assets/img/about/1.png" alt="Precision Manufacturing" class="mission-image-3d">
+  </div>
+</div>
+          
+          <!-- Industrial Accents -->
+          <div class="corner-bracket bracket-tl"></div>
+          <div class="corner-bracket bracket-br"></div>
+        </div>
+      </div>
+      
+      <!-- Right Content Column -->
+      <div class="mission-content-enhanced slide-in-right">
+        <div class="section-tag">
+          <span class="tag-line"></span>
+          <span class="tag-text">Our Foundation</span>
+        </div>
+        
+        <h2 class="mission-title">
+          <span class="title-row">Engineering</span>
+          <span class="title-row highlight">Excellence</span>
+          <span class="title-outline">Since 1990</span>
+        </h2>
+        
+        <div class="mission-body">
+          <p class="lead-text typewriter-text">
+            AMR Industrials is a premier manufacturing organization built on a technical legacy of precision and innovation.
+          </p>
+          
+          <p class="body-text">
+            Founded in 1990 and formally established as a corporate entity in 1994, we function as a strategic Tier-1 supplier. Our commitment extends beyond manufacturing—we engineer reliability into every high-tolerance component, ensuring seamless integration into your most critical assemblies.
+          </p>
+        </div>
+        
+        <div class="mission-principle-card">
+          <div class="principle-content">
+            <svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.0172-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.0172-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
             </svg>
-            <p>"Quality Matters" – a principle that governs every component we engineer and every partnership we forge.</p>
+            <blockquote>
+              Quality Matters – a principle that governs every component we engineer and every partnership we forge.
+            </blockquote>
+            <div class="principle-accent"></div>
+          </div>
+        </div>
+        
+        <div class="mission-stats-row">
+          <div class="mini-stat">
+            <span class="stat-value" data-count="34">0</span>
+            <span class="stat-unit">+</span>
+            <span class="stat-label">Years Legacy</span>
+          </div>
+          <div class="mini-stat-divider"></div>
+          <div class="mini-stat">
+            <span class="stat-value" data-count="60">0</span>
+            <span class="stat-unit">+</span>
+            <span class="stat-label">Machines</span>
+          </div>
+          <div class="mini-stat-divider"></div>
+          <div class="mini-stat">
+            <span class="stat-value" data-count="99">0</span>
+            <span class="stat-unit">%</span>
+            <span class="stat-label">Precision Rate</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     
     <!-- Heritage Timeline -->
-    <section class="timeline-section section">
+   <!-- Heritage Timeline Enhanced -->
+<section class="timeline-section section" id="heritage">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Heritage: From Shop Floor to Leadership</h2>
+      <p class="section-subtitle">The visionary journey of M. Mansoor Rahiman</p>
+    </div>
+    
+    <div class="timeline-enhanced">
+      <!-- Animated Progress Line -->
+      <div class="timeline-track">
+        <div class="timeline-track-line"></div>
+        <div class="timeline-track-progress"></div>
+      </div>
+      
+      <div class="timeline-grid">
+        <!-- Stage 1: Left -->
+        <div class="timeline-row" data-aos="fade-right">
+          <div class="timeline-card">
+            <div class="timeline-image-wrap">
+              <img src="./assets/img/timeline/stage1.jpg" alt="Shop Floor Roots" onerror="this.style.display='none'">
+              
+              <div class="timeline-image-overlay"></div>
+              <div class="timeline-stage-badge">
+                <span class="stage-number">01</span>
+                <span class="stage-label">Foundation</span>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag">Early Career</span>
+                <span class="timeline-year">1970s</span>
+              </div>
+              <h3>Shop-Floor Roots</h3>
+              <p>Our Managing Director, M. Mansoor Rahiman, began his career as a shop-floor helper in lathe operations, mastering the intricacies of machining from the ground up.</p>
+              <div class="timeline-icon-row">
+                <div class="t-icon" title="Hands-on Learning">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                </div>
+                <span>Ground Level Expertise</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-ring"></div>
+          </div>
+          <div class="timeline-spacer"></div>
+        </div>
+
+        <!-- Stage 2: Right -->
+        <div class="timeline-row right" data-aos="fade-left">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-ring"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-image-wrap">
+              <img src="./assets/img/timeline/stage2.jpg" alt="Entrepreneurial Leap" onerror="this.style.display='none'">
+             
+              <div class="timeline-image-overlay"></div>
+              <div class="timeline-stage-badge accent">
+                <span class="stage-number">02</span>
+                <span class="stage-label">Vision</span>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag highlight">1990</span>
+                <span class="timeline-year">Founding</span>
+              </div>
+              <h3>Entrepreneurial Leap</h3>
+              <p>Driven by a passion for precision, he founded the company with a modest setup of just two lathe machines, building the foundation for future excellence.</p>
+              <div class="timeline-stats-mini">
+                <div class="mini-stat-item">
+                  <strong>2</strong>
+                  <span>Lathe Machines</span>
+                </div>
+                <div class="mini-stat-divider"></div>
+                <div class="mini-stat-item">
+                  <strong>1</strong>
+                  <span>Visionary</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 3: Left -->
+        <div class="timeline-row" data-aos="fade-right">
+          <div class="timeline-card">
+            <div class="timeline-image-wrap">
+              <img src="./assets/img/timeline/stage3.jpg" alt="Formal Establishment" onerror="this.style.display='none'">
+              
+              <div class="timeline-image-overlay"></div>
+              <div class="timeline-stage-badge">
+                <span class="stage-number">03</span>
+                <span class="stage-label">Growth</span>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag">1994</span>
+                <span class="timeline-year">Incorporation</span>
+              </div>
+              <h3>Formal Establishment</h3>
+              <p>AMR Industrials was formally established as a corporate entity, marking the beginning of our evolution into a trusted modern manufacturing organization.</p>
+              <ul class="timeline-highlights">
+                <li>Corporate Structure</li>
+                <li>Quality Standards</li>
+                <li>First Major Clients</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-ring"></div>
+          </div>
+          <div class="timeline-spacer"></div>
+        </div>
+
+        <!-- Stage 4: Right -->
+        
+         <div class="timeline-row right" data-aos="fade-left">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-node">
+            <div class="node-dot"></div>
+            <div class="node-ring"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-image-wrap">
+              <img src="./assets/img/timeline/stage4.jpg" alt="Entrepreneurial Leap" onerror="this.style.display='none'">
+             
+              <div class="timeline-image-overlay"></div>
+              <div class="timeline-stage-badge accent">
+                <span class="stage-number">04</span>
+                <span class="stage-label">Today</span>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-tag success">Present</span>
+                <span class="timeline-year">2024+</span>
+              </div>
+             <h3>Sustainable Growth</h3>
+              <p>Through decades of discipline and customer trust, we've evolved into a trusted manufacturing partner with 60+ specialized machines and 45-50 skilled professionals.</p>
+              <div class="timeline-achievements">
+                <div class="achievement-pill">
+                  <strong>60+</strong>
+                  <span>Machines</span>
+                </div>
+                <div class="achievement-pill">
+                  <strong>34+</strong>
+                  <span>Years</span>
+                </div>
+                <div class="achievement-pill">
+                  <strong>Tier-1</strong>
+                  <span>Supplier</span>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+    <!-- Core Values -->
+   <!-- Enhanced Core Values Section -->
+<!-- Core Values - FIXED SECTION -->
+    <section class="values-enhanced section" id="values">
+      <!-- Decorative Background Elements -->
+      <div class="values-bg-decoration">
+        <div class="values-orb orb-1"></div>
+        <div class="values-orb orb-2"></div>
+        <div class="values-orb orb-3"></div>
+        <div class="values-grid-pattern"></div>
+      </div>
+
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Heritage: From Shop Floor to Leadership</h2>
-          <p class="section-subtitle">The visionary journey of M. Mansoor Rahiman</p>
+        <div class="section-header-enhanced">
+          <span class="section-tag">Our Foundation</span>
+          <h2 class="section-title">Core Values</h2>
+          <p class="section-subtitle">Principles that deliver tangible benefits to our clients and drive every decision we make</p>
+          <div class="header-line">
+            <span class="line-accent"></span>
+            <span class="line-dot"></span>
+            <span class="line-accent"></span>
+          </div>
         </div>
         
-        <div class="timeline">
-          <div class="timeline-item fade-in">
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-content">
-              <h3>Stage 1: Shop-Floor Roots</h3>
-              <p class="timeline-year">Early Career</p>
-              <p>Our Managing Director, M. Mansoor Rahiman, began his career as a shop-floor helper in lathe operations, mastering the intricacies of machining from the ground up.</p>
+        <div class="values-grid-enhanced">
+          <!-- Value Card 1: Precision -->
+          <div class="value-card-enhanced value-card-visible" data-value="precision">
+            <div class="card-glow"></div>
+            <div class="card-border"></div>
+           <div class="value-card-content">
+              <div class="value-icon-wrapper">
+                <div class="icon-bg">
+                  <svg class="value-icon-enhanced" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="url(#precision-gradient)" stroke-width="3" opacity="0.3"/>
+                    <circle cx="32" cy="32" r="20" stroke="url(#precision-gradient)" stroke-width="4" opacity="0.8"/>
+                    <circle cx="32" cy="32" r="8" fill="url(#precision-gradient)"/>
+                    <line x1="32" y1="4" x2="32" y2="14" stroke="url(#precision-gradient)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="32" y1="50" x2="32" y2="60" stroke="url(#precision-gradient)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="4" y1="32" x2="14" y2="32" stroke="url(#precision-gradient)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="50" y1="32" x2="60" y2="32" stroke="url(#precision-gradient)" stroke-width="4" stroke-linecap="round"/>
+                    <defs>
+                      <linearGradient id="precision-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#E67E22"/>
+                        <stop offset="100%" style="stop-color:#D35400"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="icon-float-element float-1"></div>
+                <div class="icon-float-element float-2"></div>
+              </div>
+              
+              <div class="value-number">01</div>
+              <h3 class="value-title">Precision</h3>
+              <p class="value-description">Every component is machined to exact specifications, ensuring seamless integration, optimal performance, and uncompromising reliability within your most critical assemblies.</p>
+              
+              <div class="value-features">
+                <span class="feature-tag">±0.01mm Tolerance</span>
+                <span class="feature-tag">CNC Accuracy</span>
+              </div>
             </div>
           </div>
-          
-          <div class="timeline-item fade-in">
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-content">
-              <h3>Stage 2: Entrepreneurial Leap</h3>
-              <p class="timeline-year">1990</p>
-              <p>Driven by a passion for precision, he founded the company with a modest setup of just two lathe machines, building it from a modest setup.</p>
+
+          <!-- Value Card 2: Discipline -->
+          <div class="value-card-enhanced value-card-visible" data-value="discipline">
+            <div class="card-glow"></div>
+            <div class="card-border"></div>
+            <div class="value-card-content">
+              <div class="value-icon-wrapper">
+                <div class="icon-bg blue">
+                  <svg class="value-icon-enhanced" viewBox="0 0 64 64" fill="none">
+                    <rect x="12" y="8" width="40" height="48" rx="6" stroke="url(#discipline-gradient)" stroke-width="3" fill="rgba(52, 152, 219, 0.1)"/>
+                    <path d="M22 32 L30 40 L42 24" stroke="url(#discipline-gradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="32" y1="8" x2="32" y2="56" stroke="url(#discipline-gradient)" stroke-width="2" opacity="0.3"/>
+                    <line x1="12" y1="32" x2="52" y2="32" stroke="url(#discipline-gradient)" stroke-width="2" opacity="0.3"/>
+                    <defs>
+                      <linearGradient id="discipline-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3498DB"/>
+                        <stop offset="100%" style="stop-color:#2980B9"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="icon-float-element float-1"></div>
+                <div class="icon-float-element float-2"></div>
+              </div>
+              
+              <div class="value-number">02</div>
+              <h3 class="value-title">Discipline</h3>
+              <p class="value-description">Our disciplined production methodologies de-risk your supply chain. By adhering to rigorous schedules and proven processes, we provide predictable, on-time delivery.</p>
+              
+              <div class="value-features">
+                <span class="feature-tag">ISO Standards</span>
+                <span class="feature-tag">On-Time Delivery</span>
+              </div>
             </div>
           </div>
-          
-          <div class="timeline-item fade-in">
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-content">
-              <h3>Stage 3: Formal Establishment</h3>
-              <p class="timeline-year">1994</p>
-              <p>AMR Industrials was formally established as a corporate entity, marking the beginning of our evolution into a trusted modern manufacturing organization.</p>
-            </div>
-          </div>
-          
-          <div class="timeline-item fade-in">
-            <div class="timeline-marker">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-content">
-              <h3>Stage 4: Sustainable Growth</h3>
-              <p class="timeline-year">Present Day</p>
-              <p>Through decades of discipline and customer trust, we've evolved into a trusted manufacturing partner with 60+ specialized machines and 45-50 skilled professionals.</p>
+
+          <!-- Value Card 3: Continuous Improvement -->
+          <div class="value-card-enhanced value-card-visible" data-value="improvement">
+            <div class="card-glow"></div>
+            <div class="card-border"></div>
+            <div class="value-card-content">
+              <div class="value-icon-wrapper">
+                <div class="icon-bg green">
+                  <svg class="value-icon-enhanced" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="26" stroke="url(#improvement-gradient)" stroke-width="2" opacity="0.3"/>
+                    <path d="M20 36 L32 24 L44 36" stroke="url(#improvement-gradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="32" y1="24" x2="32" y2="48" stroke="url(#improvement-gradient)" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="32" cy="16" r="4" fill="url(#improvement-gradient)" opacity="0.9"/>
+                    <defs>
+                      <linearGradient id="improvement-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#27AE60"/>
+                        <stop offset="100%" style="stop-color:#229954"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="icon-float-element float-1"></div>
+                <div class="icon-float-element float-2"></div>
+              </div>
+              
+              <div class="value-number">03</div>
+              <h3 class="value-title">Continuous Improvement</h3>
+              <p class="value-description">We continuously invest in advanced machinery and workforce skills to stay ahead of industrial trends, offering state-of-the-art manufacturing solutions.</p>
+              
+              <div class="value-features">
+                <span class="feature-tag">Kaizen Method</span>
+                <span class="feature-tag">Tech Innovation</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- Core Values -->
-    <section class="values-section section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Core Values</h2>
-          <p class="section-subtitle">Principles that deliver tangible benefits to our clients</p>
-        </div>
-        
-        <div class="values-grid">
-          <div class="value-card slide-in-left">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <circle cx="32" cy="32" r="24" fill="var(--color-accent)" opacity="0.2"/>
-              <circle cx="32" cy="32" r="16" fill="var(--color-accent)" opacity="0.4"/>
-              <circle cx="32" cy="32" r="8" fill="var(--color-accent)"/>
-              <line x1="32" y1="8" x2="32" y2="16" stroke="var(--color-accent)" stroke-width="2"/>
-              <line x1="32" y1="48" x2="32" y2="56" stroke="var(--color-accent)" stroke-width="2"/>
-            </svg>
-            <h3>Precision</h3>
-            <p>Every component is machined to exact specifications, ensuring seamless integration, optimal performance, and uncompromising reliability within your most critical assemblies.</p>
-          </div>
-          
-          <div class="value-card slide-in-left">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <rect x="12" y="12" width="40" height="40" rx="4" fill="var(--color-accent)" opacity="0.2"/>
-              <rect x="18" y="18" width="28" height="28" rx="2" fill="var(--color-accent)" opacity="0.4"/>
-              <path d="M26 32 L30 36 L38 28" stroke="var(--color-white)" stroke-width="3" fill="none"/>
-            </svg>
-            <h3>Discipline</h3>
-            <p>Our disciplined production methodologies de-risk your supply chain. By adhering to rigorous schedules and proven processes, we provide predictable, on-time delivery.</p>
-          </div>
-          
-          <div class="value-card slide-in-left">
-            <svg class="value-icon" viewBox="0 0 64 64">
-              <path d="M32 8 L38 20 L52 22 L42 31 L45 45 L32 38 L19 45 L22 31 L12 22 L26 20 Z" fill="var(--color-accent)" opacity="0.3"/>
-              <circle cx="32" cy="32" r="12" fill="var(--color-accent)"/>
-              <path d="M28 32 L30 34 L36 28" stroke="var(--color-white)" stroke-width="2" fill="none"/>
-            </svg>
-            <h3>Continuous Improvement</h3>
-            <p>We continuously invest in advanced machinery and workforce skills to stay ahead of industrial trends, offering state-of-the-art manufacturing solutions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
     
     <!-- Infrastructure Overview -->
     <section class="infrastructure-section section">
@@ -223,47 +571,286 @@
     </section>
     
     <!-- Partnerships -->
-    <section class="partnerships-section section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Trusted by Global Industry Leaders</h2>
-          <p class="section-subtitle">Our reputation as a preferred Tier-1 and Tier-2 supplier is built on long-term, trust-based relationships.</p>
-        </div>
-        
-        <div class="partnerships-content fade-in">
-          <p class="partnerships-intro">We consistently meet rigorous international standards, adhering to strict quality and delivery timelines for prestigious clients including:</p>
-          
-          <div class="partners-list">
-            <div class="partner-card">
+ 
+      <section class="partnerships-3d-section section" id="partnerships">
+  <div class="partnerships-bg-effects">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="grid-pattern"></div>
+  </div>
+  
+  <div class="container">
+    <div class="section-header-enhanced fade-in">
+      <span class="section-tag">Our Network</span>
+      <h2 class="section-title">Trusted by Global Industry Leaders</h2>
+      <p class="section-subtitle">Our reputation as a preferred Tier-1 and Tier-2 supplier is built on long-term, trust-based relationships and uncompromising quality standards.</p>
+      <div class="header-accent-line">
+        <span></span>
+        <i class="accent-dot"></i>
+        <span></span>
+      </div>
+    </div>
+    
+    <div class="partnerships-3d-grid">
+      <!-- Partner Card 1: ELGI -->
+      <div class="partner-3d-card" data-partner="elgi">
+        <div class="card-3d-wrapper">
+          <div class="card-front">
+            <div class="partner-visual">
+              <div class="logo-container">
+                <div class="logo-placeholder elgi-logo">
+                  <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="15" width="40" height="30" rx="4" fill="#E67E22" opacity="0.9"/>
+                    <text x="28" y="35" text-anchor="middle" fill="white" font-family="Poppins" font-weight="700" font-size="14">ELGI</text>
+                    <circle cx="75" cy="30" r="15" stroke="#C9B59C" stroke-width="3" fill="none"/>
+                    <path d="M68 30 L75 23 L82 30 L75 37 Z" fill="#C9B59C"/>
+                  </svg>
+                </div>
+                <div class="logo-glow"></div>
+              </div>
+              <div class="industry-badge">Industrial Equipment</div>
+            </div>
+            <div class="partner-content">
               <h3>ELGI Equipments & ELGI Electric</h3>
-              <p>As a trusted Tier-1 supplier, we provide critical, high-durability compressor spares and specialized textile components.</p>
+              <div class="tier-badge tier-1">Tier-1 Supplier</div>
+              <p>As a trusted Tier-1 supplier, we provide critical, high-durability compressor spares and specialized textile components engineered for reliability.</p>
+              
+              <div class="partner-metrics">
+                <div class="metric">
+                  <span class="metric-value">15+</span>
+                  <span class="metric-label">Years Partnership</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                  <span class="metric-value">50K+</span>
+                  <span class="metric-label">Units Delivered</span>
+                </div>
+              </div>
+              
+              <div class="hover-hint">
+                <span>Explore Partnership</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
             </div>
-            
-            <div class="partner-card">
+          </div>
+          
+          <div class="card-shine"></div>
+          <div class="card-border-glow"></div>
+        </div>
+      </div>
+
+      <!-- Partner Card 2: Schneider Electric -->
+      <div class="partner-3d-card" data-partner="schneider">
+        <div class="card-3d-wrapper">
+          <div class="card-front">
+            <div class="partner-visual">
+              <div class="logo-container">
+                <div class="logo-placeholder schneider-logo">
+                  <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="10" width="100" height="40" rx="20" fill="#3498DB" opacity="0.9"/>
+                    <circle cx="35" cy="30" r="8" fill="white"/>
+                    <circle cx="60" cy="30" r="8" fill="white" opacity="0.7"/>
+                    <circle cx="85" cy="30" r="8" fill="white" opacity="0.4"/>
+                    <path d="M35 30 L85 30" stroke="white" stroke-width="2" stroke-dasharray="4 2"/>
+                  </svg>
+                </div>
+                <div class="logo-glow blue"></div>
+              </div>
+              <div class="industry-badge">Electrical Systems</div>
+            </div>
+            <div class="partner-content">
               <h3>Schneider Electric India Pvt Ltd</h3>
+              <div class="tier-badge tier-1">Tier-1 Supplier</div>
               <p>We manufacture high-quality, precision components for electric panels, meeting stringent international safety and quality standards.</p>
+              
+              <div class="partner-metrics">
+                <div class="metric">
+                  <span class="metric-value">ISO</span>
+                  <span class="metric-label">Certified</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                  <span class="metric-value">99.9%</span>
+                  <span class="metric-label">Quality Rate</span>
+                </div>
+              </div>
+              
+              <div class="hover-hint">
+                <span>Explore Partnership</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
             </div>
-            
-            <div class="partner-card">
-              <h3>Simtech</h3>
+          </div>
+          
+          <div class="card-shine"></div>
+          <div class="card-border-glow blue"></div>
+        </div>
+      </div>
+
+      <!-- Partner Card 3: Simtech -->
+      <div class="partner-3d-card" data-partner="simtech">
+        <div class="card-3d-wrapper">
+          <div class="card-front">
+            <div class="partner-visual">
+              <div class="logo-container">
+                <div class="logo-placeholder simtech-logo">
+                  <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="60,10 110,50 10,50" fill="#27AE60" opacity="0.9"/>
+                    <circle cx="60" cy="35" r="10" fill="white"/>
+                    <rect x="55" y="20" width="10" height="30" fill="#2A2A2A" opacity="0.3" transform="rotate(45 60 35)"/>
+                  </svg>
+                </div>
+                <div class="logo-glow green"></div>
+              </div>
+              <div class="industry-badge">Manufacturing</div>
+            </div>
+            <div class="partner-content">
+              <h3>Simtech Industries</h3>
+              <div class="tier-badge tier-2">Tier-2 Partner</div>
               <p>A key manufacturing partner, providing a consistent supply of precision-machined items and specialized industrial components.</p>
+              
+              <div class="partner-metrics">
+                <div class="metric">
+                  <span class="metric-value">24/7</span>
+                  <span class="metric-label">Support</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                  <span class="metric-value">100%</span>
+                  <span class="metric-label">On-Time</span>
+                </div>
+              </div>
+              
+              <div class="hover-hint">
+                <span>Explore Partnership</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-shine"></div>
+          <div class="card-border-glow green"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Trust Indicators -->
+    <div class="trust-indicators fade-in">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>Verified Supplier</strong>
+          <span>ISO 9001:2015 Certified</span>
+        </div>
+      </div>
+      
+      <div class="trust-divider"></div>
+      
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>15+ Years</strong>
+          <span>Average Partnership Duration</span>
+        </div>
+      </div>
+      
+      <div class="trust-divider"></div>
+      
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="trust-text">
+          <strong>100% Compliance</strong>
+          <span>International Standards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+   
+    <!-- Join Us CTA -->
+    <section id="join-us" class="cta-enhanced-section">
+      <div class="cta-parallax-bg">
+        <div class="parallax-layer layer-1" data-speed="0.3"></div>
+        <div class="parallax-layer layer-2" data-speed="0.5"></div>
+        <div class="parallax-layer layer-3" data-speed="0.7"></div>
+        <div class="parallax-layer layer-grid"></div>
+      </div>
+      
+      <div class="container">
+        <div class="cta-shell">
+          <div class="cta-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="8.5" cy="7" r="4"></circle>
+              <line x1="20" y1="8" x2="20" y2="14"></line>
+              <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            Join Our Team
+          </div>
+          
+          <h2 class="cta-title">Craft Your Future<br>With Us</h2>
+          <p class="cta-subtitle">We're always looking for talented machinists, programmers, and engineers who share our passion for precision. Join a team where your skills are valued and your growth is guaranteed.</p>
+          
+          <ul class="cta-highlights">
+            <li>Competitive compensation and benefits</li>
+            <li>State-of-the-art facility with 60+ machines</li>
+            <li>Continuous learning and certification programs</li>
+            <li>Work with global brands like ELGI and Schneider</li>
+          </ul>
+          
+          <div class="cta-actions">
+            <a href="contact-us.html" class="btn btn-primary btn-cta">View Open Positions</a>
+            <a href="mailto:careers@amrindustrials.com" class="btn btn-secondary btn-cta btn-cta-outline">Send Resume</a>
+          </div>
+          
+          <div class="cta-trust">
+            <div class="trust-item">
+              <span class="trust-num">45-50</span>
+              <span class="trust-label">Current Team</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num">34+</span>
+              <span class="trust-label">Years Legacy</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="trust-num">100%</span>
+              <span class="trust-label">Employee Focused</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section section">
-      <div class="container">
-        <div class="cta-content fade-in">
-          <h2>Partner With Excellence</h2>
-          <p>Discover how AMR Industrials' precision engineering solutions can add significant value to your manufacturing and supply chain operations.</p>
-          <a href="../contact-us/contact-us.html" class="btn btn-primary btn-lg">Schedule a Consultation</a>
-        </div>
+      
+      <div class="cta-particles">
+        <span class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></span>
+        <span class="particle" style="left: 20%; top: 60%; animation-delay: 2s;"></span>
+        <span class="particle" style="left: 70%; top: 30%; animation-delay: 4s;"></span>
+        <span class="particle" style="left: 80%; top: 70%; animation-delay: 6s;"></span>
+        <span class="particle" style="left: 50%; top: 50%; animation-delay: 8s;"></span>
       </div>
     </section>
-    
   </main>
   
   <!-- Footer -->
@@ -323,7 +910,6 @@
   
   <!-- Scripts -->
   <script src="../shared/js/common.js"></script>
-  <script src="js/about.js"></script>
   
 </body>
 </html>

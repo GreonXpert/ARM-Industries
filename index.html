@@ -28,8 +28,15 @@
     <div class="container">
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="brand-link" aria-label="AMR Industrials Home">
-          <span class="brand-name">AMR Industrials</span>
-        </a>
+  <img
+    src="./assets/img/logo/logo.png"
+    alt="AMR Industrials"
+    class="brand-logo"
+    loading="eager"
+    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+  />
+  <span class="brand-name brand-fallback">AMR Industrials</span>
+</a>
 
         <button class="nav-toggle" aria-expanded="false" aria-controls="pillNav" aria-label="Toggle navigation">
           <span class="hamburger"></span>
@@ -919,71 +926,145 @@
 
 
     <!-- Team Section -->
-    <section class="team-home-section section">
-      <div class="container">
-        <div class="team-home-grid">
-          <div class="team-home-visual slide-in-left">
-            <svg viewBox="0 0 400 400" class="team-illustration">
-              <!-- Central gear with person -->
-              <circle cx="200" cy="200" r="100" fill="var(--color-tertiary)" opacity="0.2"/>
-              <circle cx="200" cy="200" r="70" fill="var(--color-accent)" opacity="0.3"/>
-              
-              <!-- Person icon -->
-              <circle cx="200" cy="180" r="25" fill="var(--color-accent)"/>
-              <path d="M160 240 Q160 210 200 210 Q240 210 240 240 Z" fill="var(--color-accent)"/>
-              
-              <!-- Surrounding skill badges -->
-              <g opacity="0.8">
-                <circle cx="140" cy="120" r="20" fill="var(--palette-3)"/>
-                <text x="140" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--color-text)">40+</text>
-                
-                <circle cx="260" cy="120" r="20" fill="var(--palette-3)"/>
-                <text x="260" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--color-text)">60+</text>
-                
-                <circle cx="300" cy="200" r="20" fill="var(--palette-3)"/>
-                <text x="300" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--color-text)">7K</text>
-                
-                <circle cx="260" cy="280" r="20" fill="var(--palette-3)"/>
-                <text x="260" y="285" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--color-text)">45+</text>
-              </g>
-            </svg>
-          </div>
-          
-          <div class="team-home-content slide-in-right">
-            <h2>Precision in Every Hand</h2>
-            <p class="lead-text">Our team of 45-50 skilled professionals brings decades of combined expertise, ensuring every component meets the highest standards of quality.</p>
-            
-            <div class="team-features">
-              <div class="team-feature-item">
-                <div class="feature-number">01</div>
-                <div class="feature-content">
-                  <h4>Leadership Excellence</h4>
-                  <p>Founded by M. Mansoor Rahiman, who rose from shop-floor helper to Managing Director—bringing deep technical expertise to every decision.</p>
-                </div>
-              </div>
-              
-              <div class="team-feature-item">
-                <div class="feature-number">02</div>
-                <div class="feature-content">
-                  <h4>Technical Mastery</h4>
-                  <p>Our operators are trained on advanced Japanese TSUGAMI CNC lathes and 60+ specialized machines for micron-level precision.</p>
-                </div>
-              </div>
-              
-              <div class="team-feature-item">
-                <div class="feature-number">03</div>
-                <div class="feature-content">
-                  <h4>Continuous Development</h4>
-                  <p>We invest in ongoing skill development and training to stay ahead of industrial trends and manufacturing innovation.</p>
-                </div>
-              </div>
+ <!-- Team Section - Interactive Accordion -->
+<section class="team-showcase-section section">
+  <div class="container">
+    <div class="team-showcase-header">
+      <h2>Precision in Every Hand</h2>
+      <p class="lead-text">Our team of 45-50 skilled professionals brings decades of combined expertise</p>
+    </div>
+    
+    <div class="team-accordion">
+      <!-- Card 1: Leadership -->
+      <div class="team-card active" data-index="0">
+        <div class="card-glass">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
             </div>
-            
-            <a href="team.html" class="btn btn-primary">Meet Our Team</a>
+            <span class="card-number">01</span>
+            <h3>Leadership</h3>
           </div>
+          <div class="card-content">
+            <div class="content-inner">
+              <div class="content-glow"></div>
+              <h4>Leadership Excellence</h4>
+              <p>Founded by M. Mansoor Rahiman, who rose from shop-floor helper to Managing Director—bringing deep technical expertise to every decision.</p>
+              <div class="stat-indicator">
+                <span class="stat-value">40+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <a href="team.html#leadership" class="card-link">Learn more →</a>
+            </div>
+          </div>
+          <div class="card-shine"></div>
         </div>
       </div>
-    </section>
+
+      <!-- Card 2: Technical -->
+      <div class="team-card" data-index="1">
+        <div class="card-glass">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <path d="M9 9h6v6H9z"/>
+                <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/>
+              </svg>
+            </div>
+            <span class="card-number">02</span>
+            <h3>Technical</h3>
+          </div>
+          <div class="card-content">
+            <div class="content-inner">
+              <div class="content-glow"></div>
+              <h4>Technical Mastery</h4>
+              <p>Our operators are trained on advanced Japanese TSUGAMI CNC lathes and 60+ specialized machines for micron-level precision.</p>
+              <div class="stat-indicator">
+                <span class="stat-value">60+</span>
+                <span class="stat-label">Specialized Machines</span>
+              </div>
+              <a href="team.html#technical" class="card-link">View capabilities →</a>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </div>
+      </div>
+
+      <!-- Card 3: Development -->
+      <div class="team-card" data-index="2">
+        <div class="card-glass">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M2 12h20"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <span class="card-number">03</span>
+            <h3>Development</h3>
+          </div>
+          <div class="card-content">
+            <div class="content-inner">
+              <div class="content-glow"></div>
+              <h4>Continuous Development</h4>
+              <p>We invest in ongoing skill development and training to stay ahead of industrial trends and manufacturing innovation.</p>
+              <div class="stat-indicator">
+                <span class="stat-value">45+</span>
+                <span class="stat-label">Skilled Professionals</span>
+              </div>
+              <a href="team.html#training" class="card-link">Our approach →</a>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </div>
+      </div>
+
+      <!-- Card 4: Facility -->
+      <div class="team-card" data-index="3">
+        <div class="card-glass">
+          <div class="card-header">
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <span class="card-number">04</span>
+            <h3>Facility</h3>
+          </div>
+          <div class="card-content">
+            <div class="content-inner">
+              <div class="content-glow"></div>
+              <h4>Infrastructure</h4>
+              <p>7,000 sq. ft. facility equipped with state-of-the-art machinery, providing the perfect environment for precision engineering.</p>
+              <div class="stat-indicator">
+                <span class="stat-value">7K</span>
+                <span class="stat-label">Square Feet</span>
+              </div>
+              <a href="about.html#facility" class="card-link">Explore facility →</a>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-showcase-cta">
+      <a href="team.html" class="btn btn-primary btn-lg">
+        Meet Our Complete Team
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 
 
   </main>
