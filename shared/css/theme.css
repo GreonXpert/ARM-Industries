@@ -188,7 +188,7 @@ a:hover {
   width: 100%;
   z-index: var(--z-fixed);
   padding: 18px 0;
-  background: var(--gradient-hero);
+  background: transparent;
   transition: padding 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
